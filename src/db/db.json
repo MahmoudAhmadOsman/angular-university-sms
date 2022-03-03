@@ -1,0 +1,54 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Leroi",
+      "email": "loloughane0@networkadvertising.org"
+    },
+    {
+      "id": 2,
+      "name": "Alicea",
+      "email": "abencher1@washington.edu"
+    },
+    {
+      "id": 3,
+      "name": "Charlie",
+      "email": "ctooze2@ftc.gov"
+    },
+    {
+      "id": 4,
+      "name": "Philippe",
+      "email": "pfarmiloe3@flavors.me"
+    },
+    {
+      "id": 5,
+      "name": "Thea",
+      "email": "tnary4@networkadvertising.org"
+    },
+    {
+      "id": 6,
+      "name": "Traci",
+      "email": "tcosta5@timesonline.co.uk"
+    },
+    {
+      "id": 7,
+      "name": "Ly",
+      "email": "ltripean6@infoseek.co.jp"
+    },
+    {
+      "id": 8,
+      "name": "Luella",
+      "email": "lnicholes7@technorati.com"
+    },
+    {
+      "id": 9,
+      "name": "Audra",
+      "email": "avarnes8@ibm.com"
+    },
+    {
+      "id": 10,
+      "name": "Warner",
+      "email": "wgormley9@epa.gov"
+    }
+  ]
+}

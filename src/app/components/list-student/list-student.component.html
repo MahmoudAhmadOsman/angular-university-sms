@@ -1,0 +1,38 @@
+<section class="student-list">
+  <div class="container">
+    <h1 class="text-danger">Student List</h1>
+    <hr />
+    <div class="row">
+      <div class="col-md-12">
+        <div class="table-responsive">
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Student ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let student of students">
+                <th>{{ student.id }}</th>
+                <td>{{ student.name }}</td>
+                <td>{{ student.email }}</td>
+                <td>
+                  <a routerLink="#" class="btn btn-success">
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                  </a>
+                  &nbsp;
+                  <a routerLink="#" class="btn btn-danger">
+                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
