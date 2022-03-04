@@ -15,7 +15,7 @@ export class StudentService {
   }
 
   //Save student data
-  saveStudentDate(data: any) {
+  saveStudentData(data: any) {
     return this.http.post(this.url, data);
   }
 }

@@ -27,7 +27,7 @@ export class AddStudentComponent implements OnInit {
   SaveData() {
     console.log(this.addStudent.value);
     //now, save the data into the json file
-    this.student.saveStudentDate(this.addStudent.value).subscribe((result) => {
+    this.student.saveStudentData(this.addStudent.value).subscribe((result) => {
       this.addStudent.reset({});
       this.router.navigate(['/students']);
     });
