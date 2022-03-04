@@ -1,1 +1,64 @@
-<p>courses works!</p>
+<section class="course-container">
+  <div class="container">
+    <h1 class="text-danger mt-3">List of Courses</h1>
+    <hr />
+    <div *ngIf="courses.length > 0; else noCoursesData">
+      <div class="row">
+        <div
+          class="col-md-3 col-sm-6"
+          *ngFor="let course of courses; let i = index"
+        >
+          <div class="card mb-3">
+            <img
+              class="card-img-top"
+              src="{{ course.imageUrl }}"
+              alt="{{ course.name }}"
+            />
+            <div class="card-body">
+              <h5 class="card-title text-info">
+                {{ course.name }}
+                <small class="badge bg-danger rounded-pill"> {{ i + 1 }}</small>
+              </h5>
+              <p class="card-text">
+                {{ course.description }}
+              </p>
+              <hr />
+              <p class="card-text">
+                <b> Price: </b><i>Was</i>&nbsp;
+                <span class="was-price">
+                  <s>${{ course.wasPrice }}</s></span
+                >
+                &nbsp;
+                <span class="text-success">${{ course.price }}</span>
+              </p>
+              <hr />
+              <p class="card-text">
+                <b>In {{ course.name }}, </b>
+                <span class="badge badge-danger">{{ course.quantity }}</span>
+                courses are avaialable!
+              </p>
+              <hr />
+              <a
+                href="{{ course.id }}"
+                class="btn btn-outline-secondary btn-sm mr-2"
+              >
+                VIEW Course Details
+              </a>
+              <a href="{{ course.id }}" class="btn btn-outline-success btn-sm">
+                BUY
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Start of ng-template -->
+    <ng-template #noCoursesData>
+      <div class="alert alert-warning">
+        <p>No courses found!</p>
+      </div>
+    </ng-template>
+    <!-- End of ng-template -->
+  </div>
+</section>
