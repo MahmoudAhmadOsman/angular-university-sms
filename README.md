@@ -1,4 +1,6 @@
-# StudentManagement
+# Student Management System
+
+- Built with Angular, bootstrap 5 & json web server
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
 
