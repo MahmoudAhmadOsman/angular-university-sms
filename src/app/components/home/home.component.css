@@ -1,5 +1,8 @@
-.home_page{
+.home_page {
   position: relative;
   overflow: hidden;
-  height: 80vh
+  /* height: auto; */
+}
+.home_page img {
+  height: auto;
 }

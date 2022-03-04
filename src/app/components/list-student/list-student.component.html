@@ -1,37 +1,50 @@
 <section class="student-list">
   <div class="container">
-    <h1 class="text-danger">Student List</h1>
+    <a routerLink="/add" class="float-end btn btn-outline-success">Add</a>
+    <h1 class="text-danger">Students List</h1>
     <hr />
     <div class="row">
       <div class="col-md-12">
-        <div class="table-responsive">
-          <table class="table table-striped table-hover">
-            <thead>
-              <tr>
-                <th scope="col">Student ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Email</th>
-                <th scope="col">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let student of students">
-                <th>{{ student.id }}</th>
-                <td>{{ student.name }}</td>
-                <td>{{ student.email }}</td>
-                <td>
-                  <a routerLink="#" class="btn btn-success">
-                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                  </a>
-                  &nbsp;
-                  <a routerLink="#" class="btn btn-danger">
-                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <!-- Start if -->
+        <div *ngIf="students.length > 0; else noStudentData">
+          <div class="table-responsive">
+            <table class="table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Student ID</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let student of students">
+                  <th>{{ student.id }}</th>
+                  <td>{{ student.name }}</td>
+                  <td>{{ student.email }}</td>
+                  <td>
+                    <a routerLink="/student/edit" class="btn btn-success">
+                      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    </a>
+                    &nbsp;
+                    <a routerLink="#" class="btn btn-danger">
+                      <i class="fa fa-trash-o" aria-hidden="true"></i>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
+        <!-- End if -->
+
+        <!-- Start of ng-template -->
+        <ng-template #noStudentData>
+          <div class="alert alert-warning">
+            <p>No Student Data</p>
+          </div>
+        </ng-template>
+        <!-- End of ng-template -->
       </div>
     </div>
   </div>

@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddStudentComponent } from './components/add-student/add-student.component';
+import { EditStudentComponent } from './components/edit-student/edit-student.component';
 import { HomeComponent } from './components/home/home.component';
 import { ListStudentComponent } from './components/list-student/list-student.component';
 
@@ -10,6 +12,15 @@ const routes: Routes = [
     path: 'students',
     component: ListStudentComponent,
   },
+  {
+    path: 'add',
+    component: AddStudentComponent,
+  },
+  {
+    path: 'student/edit',
+    component: EditStudentComponent,
+  },
+  { path: '**', redirectTo: '/' },
 ];
 
 @NgModule({

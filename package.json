@@ -6,7 +6,6 @@
     "start": "ng serve \"cd src/db && json-server --watch db.json \"",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "dev1": "concurrently -n \"cd src/db && json-server --watch db.json \" npm start",
     "dev": "concurrently \"ng serve\" \"cd src/db && json-server --watch db.json \"",
     "test": "ng test"
   },
