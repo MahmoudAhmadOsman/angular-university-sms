@@ -2,5 +2,5 @@
   position: relative;
 }
 .student-list button:disabled {
-  cursor: not-allowed;
+  cursor: not-allowed !important;
 }
