@@ -12,7 +12,6 @@ export class StudentDetailsModalComponent implements OnInit {
   constructor(private student: StudentService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    // console.log('Student Details #: ', this.route.snapshot.params['id']);
     this.showStudentDetails();
   }
 
@@ -22,23 +21,13 @@ export class StudentDetailsModalComponent implements OnInit {
       this.route.snapshot.params['id']
     );
 
-    //    this.student.showStudentDetails(this.route.snapshot.params['id']).subscribe((result) => {
-    //      console.log(result);
-    //      console.log('Student Details #: ', this.route.snapshot.params['id']);
-
-    //   // this.router.navigate(['/students']);
-    // });
-    // const id = this.route.snapshot.params['id'];
     this.student.getStudentById(this.route.snapshot.params['id']).subscribe(
       (data) => {
         this.studentDetails = data;
         // console.log('Student Details: ', data);
       },
       (error) => {
-        console.log(
-          'Error occured while fetching student details',
-          error.message
-        );
+        console.log('Error', error.message);
       }
     );
   }
