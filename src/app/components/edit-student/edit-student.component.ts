@@ -19,8 +19,13 @@ export class EditStudentComponent implements OnInit {
   ) {}
 
   editStudent = new FormGroup({
-    name: new FormControl(''),
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
     email: new FormControl(''),
+    phone: new FormControl(''),
+    schoolName: new FormControl(''),
+    scholarship: new FormControl(''),
+    avatar: new FormControl(''),
   });
 
   ngOnInit(): void {
@@ -29,8 +34,14 @@ export class EditStudentComponent implements OnInit {
       .getStudentById(this.router.snapshot.params['id'])
       .subscribe((data: any) => {
         this.editStudent = new FormGroup({
-          name: new FormControl(data['name']),
+          firstName: new FormControl(data['firstName']),
+          lastName: new FormControl(data['lastName']),
           email: new FormControl(data['email']),
+          phone: new FormControl(data['phone']),
+          schoolName: new FormControl(data['schoolName']),
+
+          scholarship: new FormControl(data['scholarship']),
+          avatar: new FormControl(data['avatar']),
         });
       });
   }

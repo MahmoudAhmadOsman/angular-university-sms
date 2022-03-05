@@ -1,49 +1,44 @@
 {
   "students": [
     {
-      "name": "Leroi",
-      "email": "loloughane0@networkadvertising.org",
-      "id": 1
+      "id": 1,
+      "firstName": "Seumas",
+      "lastName": "Von Salzberg",
+      "email": "svonsalzberg0@psu.edu",
+      "phone": "933-495-2889",
+      "schoolName": "Ecole Nationale Supérieure d'Ingenieurs Electriciens de Grenoble",
+      "scholarship": 1902,
+      "avatar": "https://robohash.org/possimusteneturillo.png?size=50x50&set=set1"
     },
     {
       "id": 2,
-      "name": "Alicea",
-      "email": "abencher1@washington.edu"
+      "firstName": "Caryn",
+      "lastName": "Coade",
+      "email": "ccoade1@gizmodo.com",
+      "phone": "411-547-5269",
+      "schoolName": "East China University of Science and Technology",
+      "scholarship": 11326,
+      "avatar": "https://robohash.org/corruptiased.png?size=50x50&set=set1"
     },
     {
       "id": 3,
-      "name": "Charlie",
-      "email": "ctooze2@ftc.gov"
+      "firstName": "Daphna",
+      "lastName": "Wollen",
+      "email": "dwollen2@ucoz.ru",
+      "phone": "742-597-8212",
+      "schoolName": "Brigham Young University",
+      "scholarship": 10442,
+      "avatar": "https://robohash.org/autnumquamexercitationem.png?size=50x50&set=set1"
     },
     {
       "id": 4,
-      "name": "Philippe",
-      "email": "pfarmiloe3@flavors.me"
-    },
-    {
-      "id": 5,
-      "name": "Thea",
-      "email": "tnary4@networkadvertising.org"
-    },
-    {
-      "id": 6,
-      "name": "Traci",
-      "email": "tcosta5@timesonline.co.uk"
-    },
-    {
-      "id": 7,
-      "name": "Ly",
-      "email": "ltripean6@infoseek.co.jp"
-    },
-    {
-      "name": "test",
-      "email": "test@gmail.com",
-      "id": 8
-    },
-    {
-      "name": "Mahmoud Osman",
-      "email": "mahmoud@gmail.com",
-      "id": 9
+      "firstName": "Grayce",
+      "lastName": "Weymont",
+      "email": "gweymont3@pen.io",
+      "phone": "866-530-4747",
+      "schoolName": "Universidade Federal de Pernambuco",
+      "scholarship": 9868,
+      "avatar": "https://robohash.org/sequiimpeditunde.png?size=50x50&set=set1"
     }
   ],
   "courses": [
