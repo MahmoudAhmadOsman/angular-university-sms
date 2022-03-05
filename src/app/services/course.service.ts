@@ -5,7 +5,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class CourseService {
-  public coursesUrl = 'http://localhost:3000/courses';
+  // public coursesUrl = 'http://localhost:3000/courses';
+  public coursesUrl = 'https://custom-states-api.herokuapp.com/courses';
   constructor(private http: HttpClient) {}
 
   //Courses api
