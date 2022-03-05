@@ -1,0 +1,6 @@
+.student-list {
+  position: relative;
+}
+.student-list button:disabled {
+  cursor: not-allowed;
+}

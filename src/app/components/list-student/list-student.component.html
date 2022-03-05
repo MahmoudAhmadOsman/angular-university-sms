@@ -58,14 +58,18 @@
                   <td>{{ student.schoolName }}</td>
                   <td>{{ student.scholarship | currency }}</td>
                   <td class="d-flex">
-                    <a
-                      routerLink="#"
+                     
+                    &nbsp;
+                    <button
+                      type="button"
+                      [routerLink]="['/details', student.id, student.firstName]"
                       class="btn btn-outline-dark btn-sm"
-                      title="View Details"
+                      data-bs-toggle="modal"
+                      data-bs-target="#myModal"
+                      style="display:none !important;">
                     >
                       <i class="fa fa-eye" aria-hidden="true"></i>
-                    </a>
-                    &nbsp;
+                    </button>
 
                     <a
                       routerLink="/edit/{{ student.id }}"
@@ -75,20 +79,20 @@
                       <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                     </a>
                     &nbsp;
-                    <a
-                      routerLink="#"
+                    <button
                       class="btn btn-outline-danger btn-sm disabled"
                       (click)="deleteStudent(student.id)"
                       title="Delete Student"
                     >
                       <i class="fa fa-trash-o" aria-hidden="true"></i>
-                    </a>
+                    </button>
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
+
         <!-- End if -->
 
         <!-- Start of ng-template -->
@@ -102,3 +106,38 @@
     </div>
   </div>
 </section>
+<!-- Start of student modal details -->
+<hr />
+<!-- <div class="student-details">
+          <div class="row">
+            <div class="modal" id="myModal">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Full Name</h4>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                    ></button>
+                  </div>
+
+                  <div class="modal-body">Modal body..</div>
+
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-danger"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+<!-- End of student modal details -->
+
+<app-student-details-modal></app-student-details-modal>

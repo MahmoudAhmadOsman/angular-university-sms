@@ -4,6 +4,7 @@ import { AddStudentComponent } from './components/add-student/add-student.compon
 import { EditStudentComponent } from './components/edit-student/edit-student.component';
 import { HomeComponent } from './components/home/home.component';
 import { ListStudentComponent } from './components/list-student/list-student.component';
+import { StudentDetailsModalComponent } from './components/student-details-modal/student-details-modal.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
     path: 'students',
     component: ListStudentComponent,
   },
+
   {
     path: 'add',
     component: AddStudentComponent,
@@ -19,6 +21,10 @@ const routes: Routes = [
   {
     path: 'edit/:id',
     component: EditStudentComponent,
+  },
+  {
+    path: 'details/:id/:name',
+    component: StudentDetailsModalComponent,
   },
   { path: '**', redirectTo: '/' },
 ];

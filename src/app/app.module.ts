@@ -15,6 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './components/footer/footer.component';
 import { CoursesComponent } from './components/courses/courses.component';
 import { LoadingComponent } from './components/loading/loading.component';
+import { StudentDetailsModalComponent } from './components/student-details-modal/student-details-modal.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { LoadingComponent } from './components/loading/loading.component';
     FooterComponent,
     CoursesComponent,
     LoadingComponent,
+    StudentDetailsModalComponent,
   ],
   imports: [
     BrowserModule,

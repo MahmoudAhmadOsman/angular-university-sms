@@ -21,7 +21,7 @@ export class StudentService {
   }
 
   //Delete api
-  deleteStudent(id: any) {
+  deleteStudent(id: number) {
     return this.http.delete(`${this.url}/${id}`);
   }
 

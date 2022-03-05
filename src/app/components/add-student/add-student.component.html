@@ -3,7 +3,7 @@
     <!-- Success message for adding new student -->
     <div
       *ngIf="successMessage"
-      class="alert alert-success alert-dismissible fade show"
+      class="alert alert-success alert-dismissible fade show col-md-8"
       role="alert"
     >
       <span
@@ -32,7 +32,7 @@
                 name="firstName"
                 formControlName="firstName"
                 placeholder="Enter first name"
-                required
+                required="required"
               />
             </div>
           </div>
@@ -47,7 +47,7 @@
                 name="lastName"
                 formControlName="lastName"
                 placeholder="Enter last name"
-                required
+                required="required"
               />
             </div>
           </div>

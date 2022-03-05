@@ -13,7 +13,7 @@ export class CoursesComponent implements OnInit {
 
   ngOnInit(): void {
     this.course.getCourseList().subscribe((data) => {
-      console.log(data);
+      // console.log(data);
       this.courses = data;
     });
   }
