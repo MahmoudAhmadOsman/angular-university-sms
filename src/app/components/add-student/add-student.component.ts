@@ -9,6 +9,8 @@ import { StudentService } from '../../services/student.service';
   styleUrls: ['./add-student.component.css'],
 })
 export class AddStudentComponent implements OnInit {
+  public successMessage: boolean = false;
+
   constructor(private student: StudentService, private router: Router) {}
 
   //1.name your form
@@ -29,7 +31,12 @@ export class AddStudentComponent implements OnInit {
     //now, save the data into the json file
     this.student.saveStudentData(this.addStudent.value).subscribe((result) => {
       this.addStudent.reset({});
-      this.router.navigate(['/students']);
+      this.successMessage = true;
+      // this.router.navigate(['/students']);
     });
+
+    setTimeout(() => {
+      this.router.navigate(['/students']);
+    }, 5000);
   }
 }

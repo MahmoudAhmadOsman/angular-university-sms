@@ -1,5 +1,22 @@
 <section class="add-student">
   <div class="container">
+    <!-- Success message for adding new student -->
+    <div
+      *ngIf="successMessage"
+      class="alert alert-success alert-dismissible fade show"
+      role="alert"
+    >
+      <span
+        ><strong>Success:</strong> Student has been added successfully!</span
+      >
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+
     <div class="row">
       <h1 class="text-danger">Add New Student</h1>
       <hr />

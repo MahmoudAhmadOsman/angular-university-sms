@@ -9,13 +9,30 @@ export class StudentService {
   public url = 'http://localhost:3000/students';
   constructor(private http: HttpClient, private courseHttp: HttpClient) {}
 
-  //Get student list
+  //Get api
   getAllStudent() {
     return this.http.get(this.url);
   }
 
-  //Save student data
+  //Save api
   saveStudentData(data: any) {
     return this.http.post(this.url, data);
+  }
+
+  //Delete api
+  deleteStudent(id: any) {
+    return this.http.delete(`${this.url}/${id}`);
+  }
+
+  //Update api
+
+  getStudentById(id: number) {
+    return this.http.get(`${this.url}/${id}`);
+  }
+
+  //Update api
+
+  updateStudentData(id: number, data: any) {
+    return this.http.put(`${this.url}/${id}`, data);
   }
 }

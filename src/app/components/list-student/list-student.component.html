@@ -3,6 +3,19 @@
     <a routerLink="/add" class="float-end btn btn-outline-success">Add</a>
     <h1 class="text-danger">Students List</h1>
     <hr />
+
+    <!-- Start of Delete message -->
+
+    <div
+      *ngIf="deleteMessage"
+      class="alert alert-danger alert-dismissible fade show"
+      role="alert"
+    >
+      <span
+        ><strong>Warning:</strong> Student has been deleted successfully!</span
+      >
+    </div>
+    <!-- End of Delete message -->
     <div class="row">
       <div class="col-md-12">
         <!-- Start if -->
@@ -23,11 +36,29 @@
                   <td>{{ student.name }}</td>
                   <td>{{ student.email }}</td>
                   <td>
-                    <a routerLink="/student/edit" class="btn btn-success">
+                    <a
+                      routerLink="#"
+                      class="btn btn-primary"
+                      title="View Details"
+                    >
+                      <i class="fa fa-eye" aria-hidden="true"></i>
+                    </a>
+                    &nbsp;
+
+                    <a
+                      routerLink="/edit/{{ student.id }}"
+                      class="btn btn-success"
+                      title="Edit Student"
+                    >
                       <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                     </a>
                     &nbsp;
-                    <a routerLink="#" class="btn btn-danger">
+                    <a
+                      routerLink="#"
+                      class="btn btn-danger"
+                      (click)="deleteStudent(student.id)"
+                      title="Delete Student"
+                    >
                       <i class="fa fa-trash-o" aria-hidden="true"></i>
                     </a>
                   </td>

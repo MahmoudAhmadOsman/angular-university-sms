@@ -17,7 +17,7 @@ const routes: Routes = [
     component: AddStudentComponent,
   },
   {
-    path: 'student/edit',
+    path: 'edit/:id',
     component: EditStudentComponent,
   },
   { path: '**', redirectTo: '/' },
