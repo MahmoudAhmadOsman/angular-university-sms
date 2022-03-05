@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "student-management:build"
+            "outputPath": "dist"
           }
         },
         "test": {
