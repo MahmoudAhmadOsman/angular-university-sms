@@ -9,7 +9,8 @@
           <img
             src="{{ studentDetails.avatar }}"
             class="card-img-top"
-            alt="..."
+            alt="{{ studentDetails.firstName }}"
+            onerror="this.src='assets/images/no-image.png';"
           />
           <div class="card-body">
             <p class="card-title">

@@ -58,6 +58,15 @@
       "schoolName": "dddddddd",
       "scholarship": "444",
       "id": 6
+    },
+    {
+      "firstName": "Mahmoud",
+      "lastName": "Osman",
+      "email": "mahmoud@yahoo.com",
+      "phone": 555555555552,
+      "schoolName": "Champlain College",
+      "scholarship": "54111",
+      "id": 7
     }
   ],
   "courses": [
