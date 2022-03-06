@@ -17,7 +17,7 @@
             <div class="card-body">
               <h5 class="card-title text-info">
                 {{ course.name }}
-                <small class="badge bg-danger rounded-pill"> {{ i + 1 }}</small>
+                <!-- <small class="badge bg-danger rounded-pill"> {{ i + 1 }}</small> -->
               </h5>
               <p class="card-text">
                 {{ course.description }}
@@ -34,7 +34,7 @@
               <hr />
               <p class="card-text">
                 <b>In {{ course.name }}, </b>
-                <span class="badge badge-danger">{{ course.quantity }}</span>
+                <span class="badge bg-danger rounded-pill">{{ course.quantity }}</span>
                 courses are avaialable!
               </p>
               <hr />
