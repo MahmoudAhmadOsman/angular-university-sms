@@ -4,6 +4,8 @@ import { AddStudentComponent } from './components/add-student/add-student.compon
 import { EditStudentComponent } from './components/edit-student/edit-student.component';
 import { HomeComponent } from './components/home/home.component';
 import { ListStudentComponent } from './components/list-student/list-student.component';
+import { LoginStudentComponent } from './components/login-student/login-student.component';
+import { RegisterStudentComponent } from './components/register-student/register-student.component';
 import { StudentDetailsModalComponent } from './components/student-details-modal/student-details-modal.component';
 
 const routes: Routes = [
@@ -25,6 +27,15 @@ const routes: Routes = [
   {
     path: 'details/:id/:name',
     component: StudentDetailsModalComponent,
+  },
+
+  {
+    path: 'login',
+    component: LoginStudentComponent,
+  },
+  {
+    path: 'register',
+    component: RegisterStudentComponent,
   },
   { path: '**', redirectTo: '/' },
 ];
