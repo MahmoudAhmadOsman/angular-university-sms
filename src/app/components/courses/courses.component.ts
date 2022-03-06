@@ -8,6 +8,7 @@ import { CourseService } from '../../services/course.service';
 })
 export class CoursesComponent implements OnInit {
   public courses: any = [];
+  public loading: boolean = true;
 
   constructor(private course: CourseService) {}
 
@@ -15,6 +16,7 @@ export class CoursesComponent implements OnInit {
     this.course.getCourseList().subscribe((data) => {
       // console.log(data);
       this.courses = data;
+      this.loading = false;
     });
   }
 }

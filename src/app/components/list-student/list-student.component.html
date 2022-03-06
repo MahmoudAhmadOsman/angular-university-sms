@@ -1,109 +1,111 @@
 <section class="student-list">
   <div class="container">
-    <a routerLink="/add" class="float-end btn btn-outline-success">Add</a>
-    <h1 class="text-danger">Students List</h1>
-    <hr />
+    <div *ngIf="loading; else loaded">
+      <app-loading></app-loading>
+    </div>
+    <ng-template #loaded>
+      <a routerLink="/add" class="float-end btn btn-outline-success">Add</a>
+      <h1 class="text-danger">Students List</h1>
+      <hr />
 
-    <!-- Start of Delete message -->
+      <!-- Start of Delete message -->
 
-    <div
-      *ngIf="deleteMessage"
-      class="alert alert-danger alert-dismissible fade show"
-      role="alert"
-    >
-      <span
-        ><strong>Warning:</strong> Student has been deleted successfully!</span
+      <div
+        *ngIf="deleteMessage"
+        class="alert alert-danger alert-dismissible fade show"
+        role="alert"
       >
-    </div>
-    <!-- End of Delete message -->
-    <div class="row">
-      <div class="col-md-12">
-        <!-- Start of  Ngif -->
-        <div *ngIf="students.length > 0; else noStudentData">
-          <div class="table-responsive">
-            <table
-              datatable
-              [dtOptions]="dtOptions"
-              class="table table-striped table-hover"
-            >
-              <thead>
-                <tr>
-                  <th scope="col">Student ID</th>
-                  <th scope="col">Avatar</th>
-                  <th scope="col">First Name</th>
-                  <th scope="col">Last Name</th>
-
-                  <th scope="col">Phone #</th>
-
-                  <th scope="col">Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let student of students">
-                  <td>{{ student.id }}</td>
-                  <td>
-                    <img
-                      class="img-fluid rounded"
-                      src="{{ student.avatar }}"
-                      onerror="this.src='assets/images/no-image.png';"
-                      alt="{{ student.name }}"
-                      style="
-                        background: #dcd5d5;
-                        width: 42px;
-                        height: 42px;
-                        border-radius: 50% !important;
-                      "
-                    />
-                  </td>
-                  <td>{{ student.firstName }}</td>
-                  <td>{{ student.lastName }}</td>
-
-                  <td>{{ student.phone }}</td>
-
-                  <td class="d-flex">
-                    &nbsp;
-                    <a
-                      type="button"
-                      [routerLink]="['/details', student.id, student.firstName]"
-                      class="btn btn-outline-dark btn-sm"
-                      data-bs-toggle="modal"
-                      data-bs-target="#myModal"
-                    >
-                      <i class="fa fa-eye" aria-hidden="true"></i>
-                    </a>
-
-                    <a
-                      routerLink="/edit/{{ student.id }}"
-                      class="btn btn-outline-success btn-sm"
-                      title="Edit Student"
-                    >
-                      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                    </a>
-                    &nbsp;
-                    <button
-                      class="btn btn-outline-danger btn-sm disabled"
-                      (click)="deleteStudent(student.id)"
-                      title="Delete Student"
-                    >
-                      <i class="fa fa-trash-o" aria-hidden="true"></i>
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- End of Ngif -->
-
-        <!-- Start of ng-template -->
-        <ng-template #noStudentData>
-          <div class="alert alert-warning">
-            <p>No Student Data</p>
-          </div>
-        </ng-template>
-        <!-- End of ng-template -->
+        <span
+          ><strong>Warning:</strong> Student has been deleted
+          successfully!</span
+        >
       </div>
-    </div>
+      <!-- End of Delete message -->
+      <div class="row">
+        <div class="col-md-12">
+          <!-- Start of  Ngif -->
+          <div *ngIf="students.length > 0; else noStudentData">
+            <div class="table-responsive">
+              <table
+                datatable
+                [dtOptions]="dtOptions"
+                class="table table-striped table-hover"
+              >
+                <thead>
+                  <tr>
+                    <th scope="col">Student ID</th>
+                    <th scope="col">Avatar</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+
+                    <th scope="col">Phone #</th>
+
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let student of students">
+                    <td>{{ student.id }}</td>
+                    <td>
+                      <img
+                        class="img-fluid rounded-circle"
+                        src="{{ student.avatar }}"
+                        onerror="this.src='assets/images/no-image.png';"
+                        alt="{{ student.name }}"
+                        style="background: #dcd5d5; width: 42px; height: 42px"
+                      />
+                    </td>
+                    <td>{{ student.firstName }}</td>
+                    <td>{{ student.lastName }}</td>
+
+                    <td>{{ student.phone }}</td>
+
+                    <td class="d-flex">
+                      &nbsp;
+                      <a
+                        [routerLink]="[
+                          '/details',
+                          student.id,
+                          student.firstName
+                        ]"
+                        class="btn btn-outline-dark btn-sm"
+                      >
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                      </a>
+
+                      <a
+                        routerLink="/edit/{{ student.id }}"
+                        class="btn btn-outline-success btn-sm"
+                        title="Edit Student"
+                      >
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                      </a>
+                      &nbsp;
+                      <button
+                        class="btn btn-outline-danger btn-sm disabled"
+                        (click)="deleteStudent(student.id)"
+                        title="Delete Student"
+                      >
+                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- End of Ngif -->
+
+          <!-- Start of ng-template -->
+          <ng-template #noStudentData>
+            <div class="alert alert-warning">
+              <p>No Student Data</p>
+            </div>
+          </ng-template>
+          <!-- End of ng-template -->
+        </div>
+      </div>
+    </ng-template>
   </div>
 </section>

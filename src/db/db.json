@@ -1,14 +1,14 @@
 {
   "students": [
     {
-      "id": 1,
       "firstName": "Seumas",
       "lastName": "Von Salzberg",
       "email": "svonsalzberg0@psu.edu",
       "phone": "933-495-2889",
       "schoolName": "Ecole Nationale Supérieure d'Ingenieurs Electriciens de Grenoble",
       "scholarship": 1902,
-      "avatar": "https://robohash.org/possimusteneturillo.png?size=50x50&set=set1"
+      "avatar": "https://robohash.org/possimusteneturillo.png?size=50x50&set=set1",
+      "id": 1
     },
     {
       "id": 2,
@@ -21,43 +21,24 @@
       "avatar": "https://robohash.org/corruptiased.png?size=50x50&set=set1"
     },
     {
-      "id": 3,
       "firstName": "Daphna",
       "lastName": "Wollen",
       "email": "dwollen2@ucoz.ru",
       "phone": "742-597-8212",
       "schoolName": "Brigham Young University",
       "scholarship": 10442,
-      "avatar": "https://robohash.org/autnumquamexercitationem.png?size=50x50&set=set1"
+      "avatar": "https://robohash.org/autnumquamexercitationem.png?size=50x50&set=set1",
+      "id": 3
     },
     {
-      "id": 4,
       "firstName": "Grayce",
       "lastName": "Weymont",
       "email": "gweymont3@pen.io",
       "phone": "866-530-4747",
       "schoolName": "Universidade Federal de Pernambuco",
       "scholarship": 9868,
-      "avatar": "https://robohash.org/sequiimpeditunde.png?size=50x50&set=set1"
-    },
-    {
-      "firstName": "",
-      "lastName": "",
-      "email": "",
-      "phone": "",
-      "school": "",
-      "scholarship": "",
-      "avatar": "",
-      "id": 5
-    },
-    {
-      "firstName": "dfdfdf",
-      "lastName": "dfdfd",
-      "email": "dfdfad@yahoo.com",
-      "phone": 4444444444444,
-      "schoolName": "dddddddd",
-      "scholarship": "444",
-      "id": 6
+      "avatar": "https://robohash.org/sequiimpeditunde.png?size=50x50&set=set1",
+      "id": 4
     }
   ],
   "courses": [

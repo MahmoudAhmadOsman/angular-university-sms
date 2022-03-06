@@ -10,7 +10,7 @@ import { StudentService } from '../../services/student.service';
   styleUrls: ['./edit-student.component.css'],
 })
 export class EditStudentComponent implements OnInit {
-  public upatedMessage: boolean = false;
+  public updateMessage: boolean = false;
 
   constructor(
     private student: StudentService,
@@ -55,7 +55,10 @@ export class EditStudentComponent implements OnInit {
       )
       .subscribe((data) => {
         console.log('Record has been updated', data);
-        this.route.navigate(['/students']);
+        this.updateMessage = true;
+        setTimeout(() => {
+          this.route.navigate(['/students']);
+        }, 1000);
       });
   }
 }

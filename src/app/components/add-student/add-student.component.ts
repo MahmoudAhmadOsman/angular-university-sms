@@ -11,6 +11,8 @@ import { StudentService } from '../../services/student.service';
 export class AddStudentComponent implements OnInit {
   public successMessage: boolean = false;
   addStudent: any;
+  // imgFile: any;
+  public url = 'assets/images/no-image.png';
   constructor(private student: StudentService, private router: Router) {}
   // addStudent = new FormGroup({
   //   firstName: new FormControl('', [Validators.required]),
@@ -21,6 +23,25 @@ export class AddStudentComponent implements OnInit {
   //   scholarship: new FormControl(''),
   //   avatar: new FormControl(''),
   // });
+
+  //Save image
+  selectFile(e: any) {
+    //(e.target.files && e.target.files.length)
+
+    if (e.target.files) {
+      const reader = new FileReader();
+      // const [file] = e.target.files;
+      reader.readAsDataURL(e.target.files[0]);
+
+      reader.onload = (e: any) => {
+        this.url = e.target.result;
+        // // this.imgFile = reader.result as string;
+        // this.addStudent.patchValue({
+        //   imgSrc: reader.result,
+        // });
+      };
+    }
+  }
 
   ngOnInit(): void {
     this.addStudent = new FormGroup({
@@ -33,6 +54,7 @@ export class AddStudentComponent implements OnInit {
       ]),
       schoolName: new FormControl('', Validators.required),
       scholarship: new FormControl('', Validators.required),
+      // avatar: new FormControl(''),
     });
   }
 

@@ -1,111 +1,125 @@
 <section class="edit-student">
   <div class="container">
-    <h1 class="text-success">Update Student Record</h1>
-    <hr />
+    <div class="row">
+      <h1 class="text-success">Update Student Record</h1>
+      <hr />
+      <div class="col-md-8">
+        <!-- Start of update message -->
+        <div
+          *ngIf="updateMessage"
+          class="alert alert-success fade show"
+          role="alert"
+        >
+          <span
+            ><strong>Success:</strong> Student record updated
+            successfully!</span
+          >
+        </div>
+        <!-- End of update message -->
 
-    <div class="col-md-8">
-      <form [formGroup]="editStudent" (ngSubmit)="UpdateData()">
-        <!-- First Name -->
-        <div class="form-group">
-          <div class="mb-3">
-            <label>First Name</label>
-            <input
-              type="text"
-              class="form-control form-control-lg"
-              name="firstName"
-              formControlName="firstName"
-              placeholder="Enter first name"
-              required
-            />
+        <form [formGroup]="editStudent" (ngSubmit)="UpdateData()">
+          <!-- First Name -->
+          <div class="form-group">
+            <div class="mb-3">
+              <label>First Name</label>
+              <input
+                type="text"
+                class="form-control form-control-lg"
+                name="firstName"
+                formControlName="firstName"
+                placeholder="Enter first name"
+                required
+              />
+            </div>
           </div>
-        </div>
 
-        <!-- Last Name -->
-        <div class="form-group">
-          <div class="mb-3">
-            <label>Last Name</label>
-            <input
-              type="text"
-              class="form-control form-control-lg"
-              name="lastName"
-              formControlName="lastName"
-              placeholder="Enter last name"
-              required
-            />
+          <!-- Last Name -->
+          <div class="form-group">
+            <div class="mb-3">
+              <label>Last Name</label>
+              <input
+                type="text"
+                class="form-control form-control-lg"
+                name="lastName"
+                formControlName="lastName"
+                placeholder="Enter last name"
+                required
+              />
+            </div>
           </div>
-        </div>
 
-        <!-- Email -->
+          <!-- Email -->
 
-        <div class="form-group">
-          <div class="mb-3">
-            <label>Email address</label>
-            <input
-              type="email"
-              class="form-control form-control-lg"
-              name="email"
-              formControlName="email"
-              placeholder="Enter email address"
-            />
+          <div class="form-group">
+            <div class="mb-3">
+              <label>Email address</label>
+              <input
+                type="email"
+                class="form-control form-control-lg"
+                name="email"
+                formControlName="email"
+                placeholder="Enter email address"
+              />
+            </div>
           </div>
-        </div>
 
-        <!-- Phone -->
-        <div class="form-group">
-          <div class="mb-3">
-            <label>Phone</label>
-            <input
-              type="text"
-              class="form-control form-control-lg"
-              name="phone"
-              formControlName="phone"
-              placeholder="Enter phone number"
-            />
+          <!-- Phone -->
+          <div class="form-group">
+            <div class="mb-3">
+              <label>Phone</label>
+              <input
+                type="text"
+                class="form-control form-control-lg"
+                name="phone"
+                formControlName="phone"
+                placeholder="Enter phone number"
+              />
+            </div>
           </div>
-        </div>
-        <!-- School Name -->
-        <div class="form-group">
-          <div class="mb-3">
-            <label>School Name</label>
-            <input
-              type="text"
-              class="form-control form-control-lg"
-              name="schoolName"
-              formControlName="schoolName"
-              placeholder="Enter school name"
-            />
+          <!-- School Name -->
+          <div class="form-group">
+            <div class="mb-3">
+              <label>School Name</label>
+              <input
+                type="text"
+                class="form-control form-control-lg"
+                name="schoolName"
+                formControlName="schoolName"
+                placeholder="Enter school name"
+              />
+            </div>
           </div>
-        </div>
-        <!-- Scholarshop -->
-        <div class="form-group">
-          <div class="mb-3">
-            <label>Amount of Scholarship</label>
-            <input
-              type="text"
-              class="form-control form-control-lg"
-              name="scholarship"
-              formControlName="scholarship"
-              placeholder="Enter amount of scholarship"
-            />
+          <!-- Scholarshop -->
+          <div class="form-group">
+            <div class="mb-3">
+              <label>Amount of Scholarship</label>
+              <input
+                type="text"
+                class="form-control form-control-lg"
+                name="scholarship"
+                formControlName="scholarship"
+                placeholder="Enter amount of scholarship"
+              />
+            </div>
           </div>
-        </div>
 
-        <!-- Avatar -->
-        <div class="form-group" style="display: none">
-          <div class="mb-3">
-            <label>Avatar</label>
-            <input
-              type="file"
-              class="form-control form-control-lg"
-              name="avatar"
-              formControlName="avatar"
-            />
+          <!-- Avatar -->
+          <div class="form-group" style="display: none">
+            <div class="mb-3">
+              <label>Avatar</label>
+              <input
+                type="file"
+                class="form-control form-control-lg"
+                name="avatar"
+                formControlName="avatar"
+              />
+            </div>
           </div>
-        </div>
-        <button class="btn btn-outline-success btn-lg font-weight-bold">
-          UPDATE
-        </button>
-      </form>
+          <button class="btn btn-outline-success btn-lg font-weight-bold">
+            UPDATE
+          </button>
+        </form>
+      </div>
     </div>
   </div>
 </section>

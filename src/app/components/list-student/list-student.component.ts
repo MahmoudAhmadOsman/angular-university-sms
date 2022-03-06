@@ -24,9 +24,8 @@ export class ListStudentComponent implements OnInit {
     };
 
     this.student.getAllStudent().subscribe((data) => {
-      // console.log(data);
-
       this.students = data;
+      this.loading = false;
     });
   }
 
@@ -34,9 +33,13 @@ export class ListStudentComponent implements OnInit {
   deleteStudent(student_id: any) {
     alert('Are you sure you want to delete this student?');
     this.student.deleteStudent(student_id).subscribe((data) => {
-      // this.ngOnInit();
+      this.ngOnInit(); //rm later
       this.deleteMessage = true;
-      this.router.navigate(['/students']);
+
+      // this.router.navigate(['/students']);
+      setTimeout(() => {
+        this.deleteMessage = false;
+      }, 3000);
     });
   }
 }
