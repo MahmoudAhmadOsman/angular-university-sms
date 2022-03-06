@@ -33,7 +33,7 @@ export class AddStudentComponent implements OnInit {
       ]),
       schoolName: new FormControl('', Validators.required),
       scholarship: new FormControl('', Validators.required),
-      avatar: new FormControl('', Validators.required),
+      // avatar: new FormControl('', Validators.required),
     });
   }
 
