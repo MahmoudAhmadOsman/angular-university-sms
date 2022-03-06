@@ -47,7 +47,12 @@
                       src="{{ student.avatar }}"
                       onerror="this.src='assets/images/no-image.png';"
                       alt="{{ student.name }}"
-                      style="width: 42px"
+                      style="
+                        background: #dcd5d5;
+                        width: 42px;
+                        height: 42px;
+                        border-radius: 50% !important;
+                      "
                     />
                   </td>
                   <td>{{ student.firstName }}</td>
