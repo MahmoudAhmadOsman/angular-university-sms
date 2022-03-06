@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { Validators, FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { StudentService } from '../../services/student.service';
 
@@ -10,25 +10,32 @@ import { StudentService } from '../../services/student.service';
 })
 export class AddStudentComponent implements OnInit {
   public successMessage: boolean = false;
-
+  addStudent: any;
   constructor(private student: StudentService, private router: Router) {}
+  // addStudent = new FormGroup({
+  //   firstName: new FormControl('', [Validators.required]),
+  //   lastName: new FormControl(''),
+  //   email: new FormControl(''),
+  //   phone: new FormControl(''),
+  //   school: new FormControl(''),
+  //   scholarship: new FormControl(''),
+  //   avatar: new FormControl(''),
+  // });
 
-  //1. name your form
-  //2. use FormGroup directive as an object
-  //3. get each form name and use FormControl directive
-  //4. bind this form in the template html form
-
-  addStudent = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    email: new FormControl(''),
-    phone: new FormControl(''),
-    school: new FormControl(''),
-    scholarship: new FormControl(''),
-    avatar: new FormControl(''),
-  });
-
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.addStudent = new FormGroup({
+      firstName: new FormControl('', Validators.required),
+      lastName: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      phone: new FormControl('', [
+        Validators.required,
+        Validators.minLength(11),
+      ]),
+      schoolName: new FormControl('', Validators.required),
+      scholarship: new FormControl('', Validators.required),
+      avatar: new FormControl('', Validators.required),
+    });
+  }
 
   //Save form data
   SaveData() {

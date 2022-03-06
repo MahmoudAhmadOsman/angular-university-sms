@@ -11,7 +11,7 @@ import { LoginStudentComponent } from './components/login-student/login-student.
 import { RegisterStudentComponent } from './components/register-student/register-student.component';
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './components/footer/footer.component';
 import { CoursesComponent } from './components/courses/courses.component';
 import { LoadingComponent } from './components/loading/loading.component';
@@ -36,6 +36,7 @@ import { StudentDetailsModalComponent } from './components/student-details-modal
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     ReactiveFormsModule,
     DataTablesModule,
   ],

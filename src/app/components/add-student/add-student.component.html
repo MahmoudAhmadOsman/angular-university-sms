@@ -22,7 +22,7 @@
       <hr />
       <div class="col-md-8 mt-4">
         <form [formGroup]="addStudent" (ngSubmit)="SaveData()">
-          <!-- First Name -->
+          <!-- First Name Validation-->
           <div class="form-group">
             <div class="mb-3">
               <label>First Name</label>
@@ -32,8 +32,17 @@
                 name="firstName"
                 formControlName="firstName"
                 placeholder="Enter first name"
-                required="required"
+                required
               />
+              <!--First Name Validation-->
+              <span
+                *ngIf="
+                  addStudent.get('firstName').invalid &&
+                  addStudent.get('firstName').touched
+                "
+                class="text-danger"
+                >First name is required!</span
+              >
             </div>
           </div>
 
@@ -49,6 +58,15 @@
                 placeholder="Enter last name"
                 required="required"
               />
+              <!--Last Name Validation-->
+              <span
+                *ngIf="
+                  addStudent.get('lastName').invalid &&
+                  addStudent.get('lastName').touched
+                "
+                class="text-danger"
+                >Last name is required!</span
+              >
             </div>
           </div>
 
@@ -64,6 +82,15 @@
                 formControlName="email"
                 placeholder="Enter email address"
               />
+              <!--Email Name-->
+              <span
+                *ngIf="
+                  addStudent.get('email').invalid &&
+                  addStudent.get('email').touched
+                "
+                class="text-danger"
+                >Email is required!</span
+              >
             </div>
           </div>
 
@@ -72,12 +99,21 @@
             <div class="mb-3">
               <label>Phone</label>
               <input
-                type="text"
+                type="number"
                 class="form-control form-control-lg"
                 name="phone"
                 formControlName="phone"
                 placeholder="Enter phone number"
               />
+              <!--Phone  Validation-->
+              <span
+                *ngIf="
+                  addStudent.get('phone').invalid &&
+                  addStudent.get('phone').touched
+                "
+                class="text-danger"
+                >Phone number is required!</span
+              >
             </div>
           </div>
           <!-- School Name -->
@@ -91,6 +127,16 @@
                 formControlName="schoolName"
                 placeholder="Enter school name"
               />
+
+              <!--School Validation-->
+              <span
+                *ngIf="
+                  addStudent.get('schoolName').invalid &&
+                  addStudent.get('schoolName').touched
+                "
+                class="text-danger"
+                >School name is required!</span
+              >
             </div>
           </div>
           <!-- Scholarshop -->
@@ -104,6 +150,15 @@
                 formControlName="scholarship"
                 placeholder="Enter amount of scholarship"
               />
+              <!--Scholarship Validation -->
+              <span
+                *ngIf="
+                  addStudent.get('scholarship').invalid &&
+                  addStudent.get('scholarship').touched
+                "
+                class="text-danger"
+                >Scholarship amount is required!</span
+              >
             </div>
           </div>
 
@@ -120,7 +175,12 @@
             </div>
           </div>
 
-          <button class="btn btn-outline-danger btn-lg font-weight-bold">SUBMIT</button>
+          <button
+            class="btn btn-outline-danger btn-lg font-weight-bold"
+            [disabled]="addStudent.invalid"
+          >
+            SUBMIT
+          </button>
         </form>
       </div>
     </div>
