@@ -18,7 +18,7 @@
     <!-- End of Delete message -->
     <div class="row">
       <div class="col-md-12">
-        <!-- Start if -->
+        <!-- Start of  Ngif -->
         <div *ngIf="students.length > 0; else noStudentData">
           <div class="table-responsive">
             <table
@@ -94,7 +94,7 @@
           </div>
         </div>
 
-        <!-- End if -->
+        <!-- End of Ngif -->
 
         <!-- Start of ng-template -->
         <ng-template #noStudentData>
