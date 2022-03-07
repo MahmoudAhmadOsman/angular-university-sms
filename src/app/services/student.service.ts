@@ -25,7 +25,7 @@ export class StudentService {
     return this.http.delete(`${this.url}/${id}`);
   }
 
-  //Update api
+  //Get by id api
 
   getStudentById(id: number) {
     return this.http.get(`${this.url}/${id}`);

@@ -11,14 +11,14 @@
       "id": 1
     },
     {
-      "id": 2,
       "firstName": "Caryn",
       "lastName": "Coade",
       "email": "ccoade1@gizmodo.com",
       "phone": "411-547-5269",
       "schoolName": "East China University of Science and Technology",
       "scholarship": 11326,
-      "avatar": "https://robohash.org/corruptiased.png?size=50x50&set=set1"
+      "avatar": "https://robohash.org/corruptiased.png?size=50x50&set=set1",
+      "id": 2
     },
     {
       "firstName": "Daphna",

@@ -44,7 +44,7 @@ export class ListStudentComponent implements OnInit {
           summary: 'Record was successfully deleted!',
           duration: 5000,
         });
-        // this.router.navigate(['/students']);
+       this.router.navigate(['/students']);
       },
       (error) => {
         this.toast.error({
