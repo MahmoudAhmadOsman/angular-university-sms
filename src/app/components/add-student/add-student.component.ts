@@ -29,23 +29,17 @@ export class AddStudentComponent implements OnInit {
   // });
 
   //Save image
-  selectFile(e: any) {
-    //(e.target.files && e.target.files.length)
+  // selectFile(e: any) {
+  //   if (e.target.files) {
+  //     const reader = new FileReader();
 
-    if (e.target.files) {
-      const reader = new FileReader();
-      // const [file] = e.target.files;
-      reader.readAsDataURL(e.target.files[0]);
+  //     reader.readAsDataURL(e.target.files[0]);
 
-      reader.onload = (e: any) => {
-        this.url = e.target.result;
-        // // this.imgFile = reader.result as string;
-        // this.addStudent.patchValue({
-        //   imgSrc: reader.result,
-        // });
-      };
-    }
-  }
+  //     reader.onload = (e: any) => {
+  //       this.url = e.target.result;
+  //     };
+  //   }
+  // }
 
   ngOnInit(): void {
     this.addStudent = new FormGroup({
@@ -63,14 +57,12 @@ export class AddStudentComponent implements OnInit {
   }
 
   //Save form data
-  SaveData() {
-    console.log(this.addStudent.value);
+   SaveData() {
+    // console.log(this.addStudent.value);
     //save the data into the json file
-    this.student.saveStudentData(this.addStudent.value).subscribe(
-      (result) => {
-        // console.log(result);
+      this.student.saveStudentData(this.addStudent.value).subscribe(
+      ( result) => {
         this.addStudent.reset({});
-
         this.toast.success({
           detail: 'Success',
           summary: 'Record has been successfully created!',
