@@ -56,7 +56,7 @@ export class EditStudentComponent implements OnInit {
         (data) => {
           this.toast.success({
             detail: 'Success',
-            summary: 'Record has been successfully updated!',
+            summary: 'Record has been updated successfully!',
             duration: 5000,
           });
           this.route.navigate(['/students']);

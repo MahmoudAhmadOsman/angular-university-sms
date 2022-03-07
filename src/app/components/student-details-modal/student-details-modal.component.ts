@@ -16,10 +16,7 @@ export class StudentDetailsModalComponent implements OnInit {
   }
 
   showStudentDetails() {
-    console.log(
-      'Pramiterized User Details Route: ',
-      this.route.snapshot.params['id']
-    );
+    console.log('Pramiterized Route: ', this.route.snapshot.params['id']);
 
     this.student.getStudentById(this.route.snapshot.params['id']).subscribe(
       (data) => {

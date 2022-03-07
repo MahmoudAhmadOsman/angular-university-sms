@@ -64,7 +64,7 @@ export class AddStudentComponent implements OnInit {
         this.addStudent.reset({});
         this.toast.success({
           detail: 'Success',
-          summary: 'Record has been successfully created!',
+          summary: 'Record has been created successfully!',
           duration: 5000,
         });
         this.router.navigate(['/students']);

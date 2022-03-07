@@ -41,10 +41,10 @@ export class ListStudentComponent implements OnInit {
         this.ngOnInit(); //rm later
         this.toast.warning({
           detail: 'Deleted',
-          summary: 'Record was successfully deleted!',
+          summary: 'Record has been deleted successfully!',
           duration: 5000,
         });
-       this.router.navigate(['/students']);
+        this.router.navigate(['/students']);
       },
       (error) => {
         this.toast.error({
