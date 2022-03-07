@@ -1,0 +1,6 @@
+.add-student {
+  position: relative;
+}
+.add-student span.text-danger {
+  color: #f00 !important;
+}
