@@ -6,8 +6,8 @@ import { Route } from '@angular/router';
   providedIn: 'root',
 })
 export class StudentService {
-  // public url = 'http://localhost:3000/students';
-  public url = 'https://custom-states-api.herokuapp.com/students';
+  public url = 'http://localhost:3000/students';
+  // public url = 'https://custom-states-api.herokuapp.com/students';
   constructor(private http: HttpClient, private courseHttp: HttpClient) {}
 
   //Get api

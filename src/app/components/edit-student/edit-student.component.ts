@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
 import { StudentService } from '../../services/student.service';
 
 @Component({
@@ -10,12 +11,11 @@ import { StudentService } from '../../services/student.service';
   styleUrls: ['./edit-student.component.css'],
 })
 export class EditStudentComponent implements OnInit {
-  public updateMessage: boolean = false;
-
   constructor(
     private student: StudentService,
     private router: ActivatedRoute,
-    private route: Router
+    private route: Router,
+    private toast: NgToastService
   ) {}
 
   editStudent = new FormGroup({
@@ -47,18 +47,27 @@ export class EditStudentComponent implements OnInit {
   }
 
   UpdateData() {
-    // console.log('Edit student value: ', this.editStudent.value);
     this.student
       .updateStudentData(
         this.router.snapshot.params['id'],
         this.editStudent.value
       )
-      .subscribe((data) => {
-        console.log('Record has been updated', data);
-        this.updateMessage = true;
-        setTimeout(() => {
+      .subscribe(
+        (data) => {
+          this.toast.success({
+            detail: 'Success',
+            summary: 'Record has been successfully updated!',
+            duration: 5000,
+          });
           this.route.navigate(['/students']);
-        }, 1000);
-      });
+        },
+        (error) => {
+          this.toast.error({
+            detail: 'Error',
+            summary: 'Unable to update this record!!',
+            duration: 5000,
+          });
+        }
+      );
   }
 }

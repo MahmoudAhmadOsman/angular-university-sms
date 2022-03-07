@@ -1,16 +1,5 @@
 <section class="add-student">
   <div class="container">
-    <!-- Success message for adding new student -->
-    <div
-      *ngIf="successMessage"
-      class="alert alert-success alert-dismissible fade show col-md-8"
-      role="alert"
-    >
-      <span
-        ><strong>Success:</strong> Student has been added successfully!</span
-      >
-    </div>
-
     <div class="row">
       <h2 class="text-danger">Register New Student</h2>
       <hr />
@@ -142,7 +131,7 @@
             <div class="mb-3">
               <label>Amount of Scholarship</label>
               <input
-                type="text"
+                type="number"
                 class="form-control form-control-lg"
                 name="scholarship"
                 formControlName="scholarship"

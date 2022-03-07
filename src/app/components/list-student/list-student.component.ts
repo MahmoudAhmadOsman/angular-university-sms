@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
 import { StudentService } from '../../services/student.service';
 
 @Component({
@@ -10,11 +11,14 @@ import { StudentService } from '../../services/student.service';
 export class ListStudentComponent implements OnInit {
   public students: any = [];
   public loading: boolean = true;
-  public deleteMessage: boolean = false;
 
   dtOptions: DataTables.Settings = {};
 
-  constructor(private student: StudentService, private router: Router) {}
+  constructor(
+    private student: StudentService,
+    private router: Router,
+    private toast: NgToastService
+  ) {}
 
   ngOnInit(): void {
     this.dtOptions = {
@@ -32,14 +36,23 @@ export class ListStudentComponent implements OnInit {
   //Delete student
   deleteStudent(student_id: any) {
     alert('Are you sure you want to delete this student?');
-    this.student.deleteStudent(student_id).subscribe((data) => {
-      this.ngOnInit(); //rm later
-      this.deleteMessage = true;
-
-      // this.router.navigate(['/students']);
-      setTimeout(() => {
-        this.deleteMessage = false;
-      }, 3000);
-    });
+    this.student.deleteStudent(student_id).subscribe(
+      (data) => {
+        this.ngOnInit(); //rm later
+        this.toast.warning({
+          detail: 'Deleted',
+          summary: 'Record was successfully deleted!',
+          duration: 5000,
+        });
+        // this.router.navigate(['/students']);
+      },
+      (error) => {
+        this.toast.error({
+          detail: 'Error',
+          summary: 'Unable to delete this record!!',
+          duration: 5000,
+        });
+      }
+    );
   }
 }

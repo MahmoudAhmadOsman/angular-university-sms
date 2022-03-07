@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
 import { StudentService } from '../../services/student.service';
 
 @Component({
@@ -9,11 +10,14 @@ import { StudentService } from '../../services/student.service';
   styleUrls: ['./add-student.component.css'],
 })
 export class AddStudentComponent implements OnInit {
-  public successMessage: boolean = false;
   addStudent: any;
   // imgFile: any;
   public url = 'assets/images/no-image.png';
-  constructor(private student: StudentService, private router: Router) {}
+  constructor(
+    private student: StudentService,
+    private router: Router,
+    private toast: NgToastService
+  ) {}
   // addStudent = new FormGroup({
   //   firstName: new FormControl('', [Validators.required]),
   //   lastName: new FormControl(''),
@@ -62,15 +66,25 @@ export class AddStudentComponent implements OnInit {
   SaveData() {
     console.log(this.addStudent.value);
     //save the data into the json file
-    this.student.saveStudentData(this.addStudent.value).subscribe((result) => {
-      console.log(result);
-      this.addStudent.reset({});
-      this.successMessage = true;
-      // this.router.navigate(['/students']);
-    });
+    this.student.saveStudentData(this.addStudent.value).subscribe(
+      (result) => {
+        // console.log(result);
+        this.addStudent.reset({});
 
-    setTimeout(() => {
-      this.router.navigate(['/students']);
-    }, 5000);
+        this.toast.success({
+          detail: 'Success',
+          summary: 'Record has been successfully created!',
+          duration: 5000,
+        });
+        this.router.navigate(['/students']);
+      },
+      (error) => {
+        this.toast.error({
+          detail: 'Error',
+          summary: 'Unable to create this record!!',
+          duration: 5000,
+        });
+      }
+    );
   }
 }

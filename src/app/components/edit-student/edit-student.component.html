@@ -4,19 +4,6 @@
       <h1 class="text-success">Update Student Record</h1>
       <hr />
       <div class="col-md-8">
-        <!-- Start of update message -->
-        <div
-          *ngIf="updateMessage"
-          class="alert alert-success fade show"
-          role="alert"
-        >
-          <span
-            ><strong>Success:</strong> Student record updated
-            successfully!</span
-          >
-        </div>
-        <!-- End of update message -->
-
         <form [formGroup]="editStudent" (ngSubmit)="UpdateData()">
           <!-- First Name -->
           <div class="form-group">
