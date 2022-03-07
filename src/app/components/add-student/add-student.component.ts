@@ -57,11 +57,10 @@ export class AddStudentComponent implements OnInit {
   }
 
   //Save form data
-   SaveData() {
-    // console.log(this.addStudent.value);
+  SaveData() {
     //save the data into the json file
-      this.student.saveStudentData(this.addStudent.value).subscribe(
-      ( result) => {
+    this.student.saveStudentData(this.addStudent.value).subscribe(
+      (result) => {
         this.addStudent.reset({});
         this.toast.success({
           detail: 'Success',
