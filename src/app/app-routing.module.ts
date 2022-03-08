@@ -17,7 +17,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'register',
+    path: 'add-student',
     component: AddStudentComponent,
   },
   {
@@ -34,7 +34,7 @@ const routes: Routes = [
     component: LoginStudentComponent,
   },
   {
-    path: 'signup',
+    path: 'register',
     component: RegisterStudentComponent,
   },
   { path: '**', redirectTo: '/' },
