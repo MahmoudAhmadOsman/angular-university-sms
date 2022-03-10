@@ -11,6 +11,7 @@ import { StudentService } from '../../services/student.service';
 export class ListStudentComponent implements OnInit {
   public students: any = [];
   public loading: boolean = true;
+  public darkTheme: boolean = false;
 
   dtOptions: DataTables.Settings = {};
 
