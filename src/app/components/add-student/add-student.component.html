@@ -1,156 +1,158 @@
 <section class="add-student">
   <div class="container">
     <div class="row">
-      <h2 class="text-danger">Register New Student</h2>
-      <hr />
-      <div class="col-md-8 mt-4">
-        <form
-          [formGroup]="addStudent"
-          (ngSubmit)="SaveData()"
-          enctype="multipart/form-data"
-        >
-          <!-- First Name Validation-->
-          <div class="form-group">
-            <div class="mb-3">
-              <label>First Name</label>
-              <input
-                type="text"
-                class="form-control form-control-lg"
-                name="firstName"
-                formControlName="firstName"
-                placeholder="Enter first name"
-                required
-              />
-              <!--First Name Validation-->
-              <span
-                *ngIf="
-                  addStudent.get('firstName').invalid &&
-                  addStudent.get('firstName').touched
-                "
-                class="text-danger"
-                >First name is required!</span
-              >
-            </div>
-          </div>
+      <div class="col-md-6 mt-4 mx-auto">
+        <div class="card container p-3 shadow-lg">
+          <h2 class="text-danger">Register New Student</h2>
+          <hr />
+          <div class="card-body">
+            <form
+              [formGroup]="addStudent"
+              (ngSubmit)="SaveData()"
+              enctype="multipart/form-data"
+            >
+              <!-- First Name Validation-->
+              <div class="form-group">
+                <div class="mb-3">
+                  <label>First Name</label>
+                  <input
+                    type="text"
+                    class="form-control form-control-lg"
+                    name="firstName"
+                    formControlName="firstName"
+                    placeholder="Enter first name"
+                    required
+                  />
+                  <!--First Name Validation-->
+                  <span
+                    *ngIf="
+                      addStudent.get('firstName').invalid &&
+                      addStudent.get('firstName').touched
+                    "
+                    class="text-danger"
+                    >First name is required!</span
+                  >
+                </div>
+              </div>
 
-          <!-- Last Name -->
-          <div class="form-group">
-            <div class="mb-3">
-              <label>Last Name</label>
-              <input
-                type="text"
-                class="form-control form-control-lg"
-                name="lastName"
-                formControlName="lastName"
-                placeholder="Enter last name"
-                required="required"
-              />
-              <!--Last Name Validation-->
-              <span
-                *ngIf="
-                  addStudent.get('lastName').invalid &&
-                  addStudent.get('lastName').touched
-                "
-                class="text-danger"
-                >Last name is required!</span
-              >
-            </div>
-          </div>
+              <!-- Last Name -->
+              <div class="form-group">
+                <div class="mb-3">
+                  <label>Last Name</label>
+                  <input
+                    type="text"
+                    class="form-control form-control-lg"
+                    name="lastName"
+                    formControlName="lastName"
+                    placeholder="Enter last name"
+                    required="required"
+                  />
+                  <!--Last Name Validation-->
+                  <span
+                    *ngIf="
+                      addStudent.get('lastName').invalid &&
+                      addStudent.get('lastName').touched
+                    "
+                    class="text-danger"
+                    >Last name is required!</span
+                  >
+                </div>
+              </div>
 
-          <!-- Email -->
+              <!-- Email -->
 
-          <div class="form-group">
-            <div class="mb-3">
-              <label>Email address</label>
-              <input
-                type="email"
-                class="form-control form-control-lg"
-                name="email"
-                formControlName="email"
-                placeholder="Enter email address"
-              />
-              <!--Email Name-->
-              <span
-                *ngIf="
-                  addStudent.get('email').invalid &&
-                  addStudent.get('email').touched
-                "
-                class="text-danger"
-                >Email is required!</span
-              >
-            </div>
-          </div>
+              <div class="form-group">
+                <div class="mb-3">
+                  <label>Email address</label>
+                  <input
+                    type="email"
+                    class="form-control form-control-lg"
+                    name="email"
+                    formControlName="email"
+                    placeholder="Enter email address"
+                  />
+                  <!--Email Name-->
+                  <span
+                    *ngIf="
+                      addStudent.get('email').invalid &&
+                      addStudent.get('email').touched
+                    "
+                    class="text-danger"
+                    >Email is required!</span
+                  >
+                </div>
+              </div>
 
-          <!-- Phone -->
-          <div class="form-group">
-            <div class="mb-3">
-              <label>Phone Number</label>
-              <input
-                type="number"
-                class="form-control form-control-lg"
-                name="phone"
-                formControlName="phone"
-                placeholder="Enter phone number"
-              />
-              <!--Phone  Validation-->
-              <span
-                *ngIf="
-                  addStudent.get('phone').invalid &&
-                  addStudent.get('phone').touched
-                "
-                class="text-danger"
-                >Phone number is required!</span
-              >
-            </div>
-          </div>
-          <!-- School Name -->
-          <div class="form-group">
-            <div class="mb-3">
-              <label>School Name</label>
-              <input
-                type="text"
-                class="form-control form-control-lg"
-                name="schoolName"
-                formControlName="schoolName"
-                placeholder="Enter school name"
-              />
+              <!-- Phone -->
+              <div class="form-group">
+                <div class="mb-3">
+                  <label>Phone Number</label>
+                  <input
+                    type="number"
+                    class="form-control form-control-lg"
+                    name="phone"
+                    formControlName="phone"
+                    placeholder="Enter phone number"
+                  />
+                  <!--Phone  Validation-->
+                  <span
+                    *ngIf="
+                      addStudent.get('phone').invalid &&
+                      addStudent.get('phone').touched
+                    "
+                    class="text-danger"
+                    >Phone number is required!</span
+                  >
+                </div>
+              </div>
+              <!-- School Name -->
+              <div class="form-group">
+                <div class="mb-3">
+                  <label>School Name</label>
+                  <input
+                    type="text"
+                    class="form-control form-control-lg"
+                    name="schoolName"
+                    formControlName="schoolName"
+                    placeholder="Enter school name"
+                  />
 
-              <!--School Validation-->
-              <span
-                *ngIf="
-                  addStudent.get('schoolName').invalid &&
-                  addStudent.get('schoolName').touched
-                "
-                class="text-danger"
-                >School name is required!</span
-              >
-            </div>
-          </div>
-          <!-- Scholarshop -->
-          <div class="form-group">
-            <div class="mb-3">
-              <label>Amount of Scholarship</label>
-              <input
-                type="number"
-                class="form-control form-control-lg"
-                name="scholarship"
-                formControlName="scholarship"
-                placeholder="Enter amount of scholarship"
-              />
-              <!--Scholarship Validation -->
-              <span
-                *ngIf="
-                  addStudent.get('scholarship').invalid &&
-                  addStudent.get('scholarship').touched
-                "
-                class="text-danger"
-                >Scholarship amount is required!</span
-              >
-            </div>
-          </div>
+                  <!--School Validation-->
+                  <span
+                    *ngIf="
+                      addStudent.get('schoolName').invalid &&
+                      addStudent.get('schoolName').touched
+                    "
+                    class="text-danger"
+                    >School name is required!</span
+                  >
+                </div>
+              </div>
+              <!-- Scholarshop -->
+              <div class="form-group">
+                <div class="mb-3">
+                  <label>Amount of Scholarship</label>
+                  <input
+                    type="number"
+                    class="form-control form-control-lg"
+                    name="scholarship"
+                    formControlName="scholarship"
+                    placeholder="Enter amount of scholarship"
+                  />
+                  <!--Scholarship Validation -->
+                  <span
+                    *ngIf="
+                      addStudent.get('scholarship').invalid &&
+                      addStudent.get('scholarship').touched
+                    "
+                    class="text-danger"
+                    >Scholarship amount is required!</span
+                  >
+                </div>
+              </div>
 
-          <!-- Avatar -->
-          <!-- <div class="form-group">
+              <!-- Avatar -->
+              <!-- <div class="form-group">
             <div class="mb-3">
               <label>Avatar</label>
               <input
@@ -165,13 +167,15 @@
             </div>
           </div> -->
 
-          <button
-            class="btn btn-outline-danger btn-lg font-weight-bold"
-            [disabled]="addStudent.invalid"
-          >
-            SUBMIT
-          </button>
-        </form>
+              <button
+                class="btn btn-outline-danger btn-lg font-weight-bold"
+                [disabled]="addStudent.invalid"
+              >
+                SUBMIT
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </div>

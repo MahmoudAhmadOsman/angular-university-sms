@@ -1,39 +1,45 @@
 <section class="student-details">
-  <div class="container">
+  <div class="container mt-3">
     <div class="row">
-      <div class="col-md-4 mx-auto">
-        <h2 class="text-info mb-3 text-center">
-          {{ studentDetails.firstName }} Detials | {{ studentDetails.id }}
-        </h2>
-        <div class="card">
-          <img
-            src="{{ studentDetails.avatar }}"
-            class="card-img-top"
-            alt="{{ studentDetails.firstName }}"
-            onerror="this.src='assets/images/no-image.png';"
-          />
+      <div class="col-md-5 mx-auto">
+        <div class="card container shadow-lg">
           <div class="card-body">
-            <p class="card-title">
-              <b>Full Name:</b> {{ studentDetails.firstName }}
-              {{ studentDetails.lastName }}
-            </p>
-            <div class="card-text">
-              <p><b>School Name:</b> {{ studentDetails.schoolName }}</p>
-              <p><b>Email Address: </b>{{ studentDetails.email }}</p>
-              <p><b>Phone Number: </b> {{ studentDetails.phone }}</p>
-              <p>
-                <b>Scholarhip(s): </b
-                >{{ studentDetails.scholarship | currency }}
+            <h2 class="text-info mb-3">
+              {{ studentDetails.firstName }} Detials with ID: 
+              <i class="text-danger">{{ studentDetails.id }}</i>
+            </h2>
+            <hr />
+
+            <img
+              src="{{ studentDetails.avatar }}"
+              class="card-img-top img-fluid"
+              alt="{{ studentDetails.firstName }}"
+              onerror="this.src='assets/images/no-image.png';"
+            />
+            <div class="card-body">
+              <p class="card-title">
+                <b>Full Name:</b> {{ studentDetails.firstName }}
+                {{ studentDetails.lastName }}
               </p>
-              <a href="/students" class="btn btn-outline-dark btn-sm">
-                <i class="fa fa-chevron-circle-left"></i>&nbsp; <b>Back</b> </a
-              >&nbsp;&nbsp;
-              <a
-                href="/edit/{{ studentDetails.id }}"
-                class="btn btn-outline-dark btn-sm"
-              >
-                <i class="fa fa-pencil">&nbsp; <b>Edit</b></i>
-              </a>
+              <div class="card-text">
+                <p><b>School Name:</b> {{ studentDetails.schoolName }}</p>
+                <p><b>Email Address: </b>{{ studentDetails.email }}</p>
+                <p><b>Phone Number: </b> {{ studentDetails.phone }}</p>
+                <p>
+                  <b>Scholarhip(s): </b
+                  >{{ studentDetails.scholarship | currency }}
+                </p>
+                <a href="/students" class="btn btn-outline-dark btn-sm">
+                  <i class="fa fa-chevron-circle-left"></i>&nbsp;
+                  <b>Back</b> </a
+                >&nbsp;&nbsp;
+                <a
+                  href="/edit/{{ studentDetails.id }}"
+                  class="btn btn-outline-dark btn-sm"
+                >
+                  <i class="fa fa-pencil">&nbsp; <b>Edit</b></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>
