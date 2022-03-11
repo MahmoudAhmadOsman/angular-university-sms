@@ -9,11 +9,11 @@
             alt="login"
           />
           <div class="card-body">
-            <h1 class="card-title">Login</h1>
+            <h1 class="card-title text-danger">Login</h1>
             <small>Please provide your username and password.</small>
             <hr />
 
-            <form class="mb-3 circle">
+            <form class="mb-3">
               <div class="form-group mb-3">
                 <label for="email" class="form-label h5"> Email address </label>
                 <input
@@ -32,12 +32,20 @@
                   placeholder="Your password"
                 />
               </div>
-              <button class="btn btn-success mt-4 btn-md">LOGIN</button>&nbsp;
-              <span class="float-end account"
-                >Don't have an account? <a routerLink="/register">Register</a>
-              </span>
-              <br />
-              <br />
+
+              <div class="d-flex flex-row bd-highlight mb-3">
+                <div class="p-2 bd-highlight">
+                  <button class="btn btn-outline-danger mt-4 btn-md">
+                    LOGIN
+                  </button>
+                </div>
+                <div class="p-2 bd-highlight" style="margin-top: 31px">
+                  <span>
+                    Don't have an account?
+                    <a routerLink="/register">Register</a>
+                  </span>
+                </div>
+              </div>
             </form>
           </div>
         </div>

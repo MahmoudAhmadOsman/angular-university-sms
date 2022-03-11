@@ -1,0 +1,7 @@
+.register-container {
+  position: relative;
+}
+
+.register-container .card span.text-danger {
+  color: #f00 !important;
+}

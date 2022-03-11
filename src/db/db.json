@@ -41,7 +41,22 @@
       "id": 4
     }
   ],
-  "users": [],
+  "users": [
+    {
+      "fullName": "John Doe",
+      "email": "john@yahoo.com",
+      "password": "12345678",
+      "confirmPassword": "12345678",
+      "id": 1
+    },
+    {
+      "fullName": "Mahmoud Osman",
+      "email": "osman@gmail.com",
+      "password": "12345678",
+      "confirmPassword": "12345678",
+      "id": 2
+    }
+  ],
   "courses": [
     {
       "id": 1,

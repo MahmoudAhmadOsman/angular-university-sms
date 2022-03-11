@@ -1,7 +1,131 @@
-<section class="signup-container">
+<section class="register-container">
   <div class="container mt-3">
     <div class="row">
-      <p>Comming Soon!!!</p>
+      <div class="col-md-6 mx-auto">
+        <div class="card shadow-lg rounded-0">
+          <img
+            src="/assets/images/register-key.jpg"
+            class="card-img-top img-fluid"
+            alt="register image"
+          />
+          <div class="card-body">
+            <h1 class="card-title text-danger">Register</h1>
+            <small>Please fill out the required fields in the form.</small>
+            <hr />
+            <br />
+
+            <form
+              class="mb-3"
+              [formGroup]="registerUser"
+              (ngSubmit)="saveNewUser()"
+            >
+              <!-- Full Name -->
+              <div class="form-group mb-3">
+                <label for="email" class="form-label lead"> Full Name</label>
+                <input
+                  type="text"
+                  class="form-control form-control-lg"
+                  name="fullName"
+                  formControlName="fullName"
+                  placeholder="Your your full name"
+                />
+                <!--Full Name Validation-->
+                <span
+                  *ngIf="
+                    registerUser.get('fullName').invalid &&
+                    registerUser.get('fullName').touched
+                  "
+                  class="text-danger"
+                  >First name is required!</span
+                >
+              </div>
+              <div class="form-group mb-3">
+                <label for="email" class="form-label lead">
+                  Email address
+                </label>
+                <input
+                  type="email"
+                  class="form-control form-control-lg"
+                  name="email"
+                  formControlName="email"
+                  placeholder="Your email"
+                  required
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                />
+                <!--Email Validation-->
+                <span
+                  *ngIf="
+                    registerUser.get('email').invalid &&
+                    registerUser.get('email').touched
+                  "
+                  class="text-danger"
+                  >First name is required!</span
+                >
+              </div>
+              <div class="form-group">
+                <label for="password" class="form-label lead"> Password </label>
+                <input
+                  type="password"
+                  class="form-control form-control-lg"
+                  name="password"
+                  formControlName="password"
+                  placeholder="Your password"
+                  required
+                  minlength="8"
+                />
+                <!--Password Validation-->
+                <span
+                  *ngIf="
+                    registerUser.get('password').invalid &&
+                    registerUser.get('password').touched
+                  "
+                  class="text-danger"
+                  >Password name is required!</span
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="password" class="form-label lead">
+                  Confirm Password
+                </label>
+                <input
+                  type="password"
+                  class="form-control form-control-lg"
+                  name="password"
+                  formControlName="confirmPassword"
+                  placeholder="Confirm Password"
+                  required
+                />
+                <!--Confirm Password  Validation-->
+                <span
+                  *ngIf="
+                    registerUser.get('confirmPassword').invalid &&
+                    registerUser.get('confirmPassword').touched
+                  "
+                  class="text-danger"
+                  >First name is required!</span
+                >
+              </div>
+
+              <div class="d-flex flex-row bd-highlight mb-3">
+                <div class="p-2 bd-highlight">
+                  <button
+                    class="btn btn-outline-danger mt-4 btn-md"
+                    [disabled]="registerUser.invalid"
+                  >
+                    REGISTER
+                  </button>
+                </div>
+                <div class="p-2 bd-highlight" style="margin-top: 31px">
+                  <span>
+                    Have an account? <a routerLink="/login">Login</a>
+                  </span>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
