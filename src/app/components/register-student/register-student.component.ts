@@ -10,7 +10,7 @@ import { RegisterService } from '../../services/register.service';
   styleUrls: ['./register-student.component.css'],
 })
 export class RegisterStudentComponent implements OnInit {
-  registerUser: any;
+  public signUpForm: any;
   constructor(
     private register: RegisterService,
     private router: Router,
@@ -18,7 +18,7 @@ export class RegisterStudentComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.registerUser = new FormGroup({
+    this.signUpForm = new FormGroup({
       fullName: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [
@@ -32,14 +32,13 @@ export class RegisterStudentComponent implements OnInit {
     });
   }
 
-  // Save New Use Data
+  // Save New User Data
 
   saveNewUser(): void {
-    // alert('Working on it!!!!!!!');
-    console.log(this.registerUser.value);
-    this.register.saveNewUserData(this.registerUser.value).subscribe(
+    // console.log(this.registerUser.value);
+    this.register.saveNewUserData(this.signUpForm.value).subscribe(
       (result) => {
-        this.registerUser.reset({});
+        this.signUpForm.reset({});
         this.toast.success({
           detail: 'Success',
           summary: 'User has been registered successfully!',

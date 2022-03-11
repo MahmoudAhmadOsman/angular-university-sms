@@ -16,7 +16,7 @@
 
             <form
               class="mb-3"
-              [formGroup]="registerUser"
+              [formGroup]="signUpForm"
               (ngSubmit)="saveNewUser()"
             >
               <!-- Full Name -->
@@ -32,8 +32,8 @@
                 <!--Full Name Validation-->
                 <span
                   *ngIf="
-                    registerUser.get('fullName').invalid &&
-                    registerUser.get('fullName').touched
+                    signUpForm.get('fullName').invalid &&
+                    signUpForm.get('fullName').touched
                   "
                   class="text-danger"
                   >First name is required!</span
@@ -55,8 +55,8 @@
                 <!--Email Validation-->
                 <span
                   *ngIf="
-                    registerUser.get('email').invalid &&
-                    registerUser.get('email').touched
+                    signUpForm.get('email').invalid &&
+                    signUpForm.get('email').touched
                   "
                   class="text-danger"
                   >First name is required!</span
@@ -76,8 +76,8 @@
                 <!--Password Validation-->
                 <span
                   *ngIf="
-                    registerUser.get('password').invalid &&
-                    registerUser.get('password').touched
+                    signUpForm.get('password').invalid &&
+                    signUpForm.get('password').touched
                   "
                   class="text-danger"
                   >Password name is required!</span
@@ -99,8 +99,8 @@
                 <!--Confirm Password  Validation-->
                 <span
                   *ngIf="
-                    registerUser.get('confirmPassword').invalid &&
-                    registerUser.get('confirmPassword').touched
+                    signUpForm.get('confirmPassword').invalid &&
+                    signUpForm.get('confirmPassword').touched
                   "
                   class="text-danger"
                   >First name is required!</span
@@ -111,7 +111,7 @@
                 <div class="p-2 bd-highlight">
                   <button
                     class="btn btn-outline-danger mt-4 btn-md"
-                    [disabled]="registerUser.invalid"
+                    [disabled]="signUpForm.invalid"
                   >
                     REGISTER
                   </button>
