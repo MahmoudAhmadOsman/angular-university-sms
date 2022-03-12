@@ -16,24 +16,22 @@ export class StudentService {
     return this.http.get(this.url);
   }
 
-  //Save api
+  //Save restAPI endpoint
   saveStudentData(data: any) {
     return this.http.post(this.url, data);
   }
 
-  //Delete api
+  //Delete restAPI endpoint
   deleteStudent(id: number) {
     return this.http.delete(`${this.url}/${id}`);
   }
 
-  //Get by id api
-
+  //Get by restAPI endpoint
   getStudentById(id: number) {
     return this.http.get(`${this.url}/${id}`);
   }
 
-  //Update api
-
+  //Update restAPI endpoint
   updateStudentData(id: number, data: any) {
     return this.http.put(`${this.url}/${id}`, data);
   }
