@@ -28,6 +28,16 @@
                   placeholder="Your email"
                   required
                 />
+
+                <!--Email Validation-->
+                <span
+                  *ngIf="
+                    loginForm.get('email').invalid &&
+                    loginForm.get('email').touched
+                  "
+                  class="text-danger"
+                  >Email is required!</span
+                >
               </div>
               <div class="form-group">
                 <label for="password" class="form-label h5"> Password </label>
@@ -39,11 +49,23 @@
                   placeholder="Your password"
                   required
                 />
+                <!--Password Validation-->
+                <span
+                  *ngIf="
+                    loginForm.get('password').invalid &&
+                    loginForm.get('password').touched
+                  "
+                  class="text-danger"
+                  >Password is required!</span
+                >
               </div>
 
               <div class="d-flex flex-row bd-highlight mb-3">
                 <div class="p-2 bd-highlight">
-                  <button class="btn btn-outline-danger mt-4 btn-md">
+                  <button
+                    class="btn btn-outline-danger mt-4 btn-md"
+                    [disabled]="loginForm.invalid"
+                  >
                     LOGIN
                   </button>
                 </div>
