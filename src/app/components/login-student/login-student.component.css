@@ -4,3 +4,7 @@
 .login-container span.account {
   margin: 35px auto auto auto !important;
 }
+
+.login-container span.text-danger {
+  color: #f00 !important;
+}
