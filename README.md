@@ -1,9 +1,3 @@
-     _                      _            
-    / \   _ __   __ _ _   _| | __ _ _ __ 
-   / _ \ | '_ \ / _` | | | | |/ _` | '__|
-  / ___ \| | | | (_| | |_| | | (_| | |   
- /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|   
-                |___/                    
 # Student Management System
 
 - Built with Angular, bootstrap 5 & json web server
