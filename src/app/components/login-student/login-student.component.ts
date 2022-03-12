@@ -55,7 +55,7 @@ export class LoginStudentComponent implements OnInit {
           } else {
             this.toast.error({
               detail: 'Error',
-              summary: 'Login Failled!!',
+              summary: 'Unable to login with this email & password!!',
               duration: 5000,
             });
           }
