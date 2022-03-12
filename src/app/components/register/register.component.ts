@@ -5,11 +5,11 @@ import { NgToastService } from 'ng-angular-popup';
 import { RegisterService } from '../../services/register.service';
 
 @Component({
-  selector: 'app-register-student',
-  templateUrl: './register-student.component.html',
-  styleUrls: ['./register-student.component.css'],
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css'],
 })
-export class RegisterStudentComponent implements OnInit {
+export class RegisterComponent implements OnInit {
   public signUpForm: any;
   constructor(
     private register: RegisterService,

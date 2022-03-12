@@ -10,11 +10,11 @@ import { NgToastService } from 'ng-angular-popup';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login-student',
-  templateUrl: './login-student.component.html',
-  styleUrls: ['./login-student.component.css'],
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css'],
 })
-export class LoginStudentComponent implements OnInit {
+export class LoginComponent implements OnInit {
   public loginForm: any = FormGroup;
   constructor(
     private formBuilder: FormBuilder,

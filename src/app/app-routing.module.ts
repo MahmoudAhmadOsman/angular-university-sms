@@ -4,8 +4,8 @@ import { AddStudentComponent } from './components/add-student/add-student.compon
 import { EditStudentComponent } from './components/edit-student/edit-student.component';
 import { HomeComponent } from './components/home/home.component';
 import { ListStudentComponent } from './components/list-student/list-student.component';
-import { LoginStudentComponent } from './components/login-student/login-student.component';
-import { RegisterStudentComponent } from './components/register-student/register-student.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 import { StudentDetailsModalComponent } from './components/student-details-modal/student-details-modal.component';
 
 const routes: Routes = [
@@ -31,11 +31,11 @@ const routes: Routes = [
 
   {
     path: 'login',
-    component: LoginStudentComponent,
+    component: LoginComponent,
   },
   {
     path: 'register',
-    component: RegisterStudentComponent,
+    component: RegisterComponent,
   },
   { path: '**', redirectTo: '/' },
 ];
