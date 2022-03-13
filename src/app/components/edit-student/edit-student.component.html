@@ -19,6 +19,15 @@
                     placeholder="Enter first name"
                     required
                   />
+                  <!--First Name Validation-->
+                  <span
+                    *ngIf="
+                      editStudent.get('firstName').invalid &&
+                      editStudent.get('firstName').touched
+                    "
+                    class="text-danger"
+                    >First name is required!</span
+                  >
                 </div>
               </div>
 
@@ -34,6 +43,15 @@
                     placeholder="Enter last name"
                     required
                   />
+                  <!--Last Name Validation-->
+                  <span
+                    *ngIf="
+                      editStudent.get('lastName').invalid &&
+                      editStudent.get('lastName').touched
+                    "
+                    class="text-danger"
+                    >Last name is required!</span
+                  >
                 </div>
               </div>
 
@@ -51,6 +69,15 @@
                     required
                     pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
                   />
+                  <!--Email  Validation-->
+                  <span
+                    *ngIf="
+                      editStudent.get('email').invalid &&
+                      editStudent.get('email').touched
+                    "
+                    class="text-danger"
+                    >Email is required!</span
+                  >
                 </div>
               </div>
 
@@ -65,6 +92,15 @@
                     formControlName="phone"
                     placeholder="Enter phone number"
                   />
+                  <!--Phone  Validation -->
+                  <span
+                    class="text-danger"
+                    *ngIf="
+                      editStudent.get('phone').invalid &&
+                      editStudent.get('phone').touched
+                    "
+                    >Phone number is required!</span
+                  >
                 </div>
               </div>
               <!-- School Name -->
@@ -78,6 +114,15 @@
                     formControlName="schoolName"
                     placeholder="Enter school name"
                   />
+                  <!--School Name Validation-->
+                  <span
+                    *ngIf="
+                      editStudent.get('schoolName').invalid &&
+                      editStudent.get('schoolName').touched
+                    "
+                    class="text-danger"
+                    >School name is required!</span
+                  >
                 </div>
               </div>
               <!-- Scholarshop -->
@@ -91,11 +136,20 @@
                     formControlName="scholarship"
                     placeholder="Enter amount of scholarship"
                   />
+                  <!--Scholarship  Validation-->
+                  <span
+                    *ngIf="
+                      editStudent.get('scholarship').invalid &&
+                      editStudent.get('scholarship').touched
+                    "
+                    class="text-danger"
+                    >Scholarship amount is required!</span
+                  >
                 </div>
               </div>
 
               <!-- Avatar -->
-              <div class="form-group" style="display: none">
+              <!-- <div class="form-group" style="display: none">
                 <div class="mb-3">
                   <label>Avatar</label>
                   <input
@@ -105,8 +159,11 @@
                     formControlName="avatar"
                   />
                 </div>
-              </div>
-              <button class="btn btn-outline-success btn-lg font-weight-bold">
+              </div> -->
+              <button
+                class="btn btn-outline-success btn-lg font-weight-bold"
+                [disabled]="editStudent.invalid"
+              >
                 UPDATE
               </button>
             </form>

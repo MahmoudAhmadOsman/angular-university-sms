@@ -46,13 +46,10 @@ export class AddStudentComponent implements OnInit {
       firstName: new FormControl('', Validators.required),
       lastName: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
-      phone: new FormControl('', [
-        Validators.required,
-        Validators.minLength(11),
-      ]),
+      phone: new FormControl('', Validators.required),
       schoolName: new FormControl('', Validators.required),
       scholarship: new FormControl('', Validators.required),
-      // avatar: new FormControl(''),
+      // avatar: new FormControl('', Validators.required),
     });
   }
 

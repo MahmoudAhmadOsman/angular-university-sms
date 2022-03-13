@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import { StudentService } from '../../services/student.service';
@@ -18,14 +18,14 @@ export class EditStudentComponent implements OnInit {
     private toast: NgToastService
   ) {}
 
-  editStudent = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    email: new FormControl(''),
-    phone: new FormControl(''),
-    schoolName: new FormControl(''),
-    scholarship: new FormControl(''),
-    avatar: new FormControl(''),
+  editStudent: any = new FormGroup({
+    firstName: new FormControl('', Validators.required),
+    lastName: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    phone: new FormControl('', Validators.required),
+    schoolName: new FormControl('', Validators.required),
+    scholarship: new FormControl('', Validators.required),
+    // avatar: new FormControl('', Validators.required),
   });
 
   ngOnInit(): void {
@@ -39,9 +39,8 @@ export class EditStudentComponent implements OnInit {
           email: new FormControl(data['email']),
           phone: new FormControl(data['phone']),
           schoolName: new FormControl(data['schoolName']),
-
           scholarship: new FormControl(data['scholarship']),
-          avatar: new FormControl(data['avatar']),
+          // avatar: new FormControl(data['avatar']),
         });
       });
   }

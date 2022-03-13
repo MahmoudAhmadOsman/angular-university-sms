@@ -1,0 +1,7 @@
+.edit-student {
+  position: relative;
+}
+
+.edit-student span.text-danger {
+  color: #f00 !important;
+}
