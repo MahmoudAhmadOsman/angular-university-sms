@@ -25,7 +25,7 @@ export class EditStudentComponent implements OnInit {
     phone: new FormControl('', Validators.required),
     schoolName: new FormControl('', Validators.required),
     scholarship: new FormControl('', Validators.required),
-    // avatar: new FormControl('', Validators.required),
+    avatar: new FormControl('', Validators.required),
   });
 
   ngOnInit(): void {
