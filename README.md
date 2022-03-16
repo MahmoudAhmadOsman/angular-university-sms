@@ -10,20 +10,87 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Code Snippet
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+ ##### Student List Class Component
 
-## Running unit tests
+```bash
+ import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
+import { StudentService } from '../../services/student.service';
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+@Component({
+  selector: 'app-list-student',
+  templateUrl: './list-student.component.html',
+  styleUrls: ['./list-student.component.css'],
+})
+export class ListStudentComponent implements OnInit {
+  public students: any = [];
+  public loading: boolean = true;
+  public darkTheme: boolean = false;
 
-## Running end-to-end tests
+  dtOptions: DataTables.Settings = {};
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+  constructor(
+    private student: StudentService,
+    private router: Router,
+    private toast: NgToastService
+  ) {}
 
-## Further help
+  ngOnInit(): void {
+    this.dtOptions = {
+      pagingType: 'full_numbers',
+      pageLength: 30,
+      processing: true,
+    };
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+    this.student.getAllStudent().subscribe((data) => {
+      this.students = data;
+      this.loading = false;
+    });
+  }
+
+   
+  deleteStudent(student_id: any) {
+    alert('Are you sure you want to delete this student?');
+    this.student.deleteStudent(student_id).subscribe(
+      (data) => {
+        this.ngOnInit(); //rm later
+        this.toast.warning({
+          detail: 'Deleted',
+          summary: 'Record has been deleted successfully!',
+          duration: 5000,
+        });
+        this.router.navigate(['/students']);
+      },
+      (error) => {
+        this.toast.error({
+          detail: 'Error',
+          summary: 'Unable to delete this record!!',
+          duration: 5000,
+        });
+      }
+    );
+  }
+}
+```
+
+
+
+
+
+## Contributing
+
+Please, feel free to contrubute to this and correct me if you see anything wrong about this project or if you have any sugguestions that would also welcomed.
+
+### My Website
+
+Please, visit my website
+[mahmoudosman.com](http://www.mahmoudosman.com/)
+
+
+### Social Media
+
+LinkedIn Profile Link: [LinkedIn](https://www.linkedin.com/in/mahmoudaoman/) 
