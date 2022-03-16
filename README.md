@@ -55,7 +55,7 @@ export class ListStudentComponent implements OnInit {
     alert('Are you sure you want to delete this student?');
     this.student.deleteStudent(student_id).subscribe(
       (data) => {
-        this.ngOnInit(); //rm later
+        this.ngOnInit();
         this.toast.warning({
           detail: 'Deleted',
           summary: 'Record has been deleted successfully!',
