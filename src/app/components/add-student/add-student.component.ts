@@ -17,7 +17,7 @@ export class AddStudentComponent implements OnInit {
     private student: StudentService,
     private router: Router,
     private toast: NgToastService
-  ) {}
+  ) { }
   // addStudent = new FormGroup({
   //   firstName: new FormControl('', [Validators.required]),
   //   lastName: new FormControl(''),
@@ -28,18 +28,6 @@ export class AddStudentComponent implements OnInit {
   //   avatar: new FormControl(''),
   // });
 
-  //Save image
-  // selectFile(e: any) {
-  //   if (e.target.files) {
-  //     const reader = new FileReader();
-
-  //     reader.readAsDataURL(e.target.files[0]);
-
-  //     reader.onload = (e: any) => {
-  //       this.url = e.target.result;
-  //     };
-  //   }
-  // }
 
   ngOnInit(): void {
     this.addStudent = new FormGroup({
