@@ -1,17 +1,9 @@
 .footer {
-  width: 100%;
+  width: auto;
   height: auto;
-
-  background-color: #000;
-  margin-top: 100%;
-  position: fixed;
+  overflow:hidden;
   left: 0;
-  bottom: 0;
-  margin-bottom: 0px;
+  right: 0;
+  position: absolute;
 }
-.footer p {
-  padding: 18px 0px 1px 0px;
-  text-align: center;
-  color: #fff;
-  font-size: 12px;
-}
+ 
