@@ -13,7 +13,7 @@ export class StudentService {
 
   constructor(private http: HttpClient, private courseHttp: HttpClient) { }
 
-  //Get api
+  //Get api endpoint
   getAllStudent() {
     return this.http.get(this.apiServerUrl);
   }
