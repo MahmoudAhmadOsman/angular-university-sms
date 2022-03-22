@@ -9,32 +9,33 @@ import { Observable } from 'rxjs';
 })
 export class StudentService {
   //Students enviroment variable
-  private apiServerUrl = environment.apiBaseUril + "/students";
+  // private apiServerUrl = environment.apiBaseUril + "/students";
+  public baseUrl ="https://custom-states-api.herokuapp.com/courses";
 
   constructor(private http: HttpClient, private courseHttp: HttpClient) { }
 
   //Get api endpoint
   getAllStudent() {
-    return this.http.get(this.apiServerUrl);
+    return this.http.get(this.baseUrl);
   }
 
   //Save restAPI endpoint
   saveStudentData(data: any) {
-    return this.http.post(this.apiServerUrl, data);
+    return this.http.post(this.baseUrl, data);
   }
 
   //Delete restAPI endpoint
   deleteStudent(id: number) {
-    return this.http.delete(`${this.apiServerUrl}/${id}`);
+    return this.http.delete(`${this.baseUrl}/${id}`);
   }
 
   //Get by restAPI endpoint
   getStudentById(id: number) {
-    return this.http.get(`${this.apiServerUrl}/${id}`);
+    return this.http.get(`${this.baseUrl}/${id}`);
   }
 
   //Update restAPI endpoint
   updateStudentData(id: number, data: any) {
-    return this.http.put(`${this.apiServerUrl}/${id}`, data);
+    return this.http.put(`${this.baseUrl}/${id}`, data);
   }
 }

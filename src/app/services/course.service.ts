@@ -7,12 +7,13 @@ import { environment } from 'src/environments/environment';
 })
 export class CourseService {
   //Courses enviroment variable
-  private coursesUrl = environment.apiBaseUril + "/courses";
+  // private coursesUrl = environment.apiBaseUril + "/courses";
+  public baseUrl ="https://custom-states-api.herokuapp.com/courses";
   
   constructor(private http: HttpClient) {}
 
   //Courses api
   getCourseList() {
-    return this.http.get(this.coursesUrl);
+    return this.http.get(this.baseUrl);
   }
 }
