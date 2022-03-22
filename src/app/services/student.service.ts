@@ -1,38 +1,40 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Route } from '@angular/router';
+import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class StudentService {
-  // public url = 'http://localhost:3000/students';
+  //Students enviroment variable
+  private apiServerUrl = environment.apiBaseUril + "/students";
 
-  public url = 'https://custom-states-api.herokuapp.com/students';
-  constructor(private http: HttpClient, private courseHttp: HttpClient) {}
+  constructor(private http: HttpClient, private courseHttp: HttpClient) { }
 
   //Get api
   getAllStudent() {
-    return this.http.get(this.url);
+    return this.http.get(this.apiServerUrl);
   }
 
   //Save restAPI endpoint
   saveStudentData(data: any) {
-    return this.http.post(this.url, data);
+    return this.http.post(this.apiServerUrl, data);
   }
 
   //Delete restAPI endpoint
   deleteStudent(id: number) {
-    return this.http.delete(`${this.url}/${id}`);
+    return this.http.delete(`${this.apiServerUrl}/${id}`);
   }
 
   //Get by restAPI endpoint
   getStudentById(id: number) {
-    return this.http.get(`${this.url}/${id}`);
+    return this.http.get(`${this.apiServerUrl}/${id}`);
   }
 
   //Update restAPI endpoint
   updateStudentData(id: number, data: any) {
-    return this.http.put(`${this.url}/${id}`, data);
+    return this.http.put(`${this.apiServerUrl}/${id}`, data);
   }
 }

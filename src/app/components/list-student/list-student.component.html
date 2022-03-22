@@ -4,11 +4,7 @@
       <app-loading></app-loading>
     </div>
     <ng-template #loaded>
-      <a
-        routerLink="/add-student"
-        class="float-end btn btn-outline-success mt-2"
-        >Add New Student</a
-      >
+      <a routerLink="/add-student" class="float-end btn btn-outline-success mt-2">Add New Student</a>
       <h1 class="text-danger">Students List</h1>
       <hr />
 
@@ -18,24 +14,12 @@
           <div *ngIf="students.length > 0; else noStudentData">
             <div class="table-responsive">
               <div class="form-check form-switch">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  id="tdid"
-                  name="darkTheme"
-                  [(ngModel)]="darkTheme"
-                />
-                <label class="form-check-label" for="tdid"
-                  >Change Table theme</label
-                >
+                <input class="form-check-input" type="checkbox" id="tdid" name="darkTheme" [(ngModel)]="darkTheme" />
+                <label class="form-check-label" for="tdid">Change Table theme</label>
               </div>
               <br />
-              <table
-                datatable
-                [dtOptions]="dtOptions"
-                class="table table-striped table-hover"
-                [class.table-warning]="darkTheme"
-              >
+              <table datatable [dtOptions]="dtOptions" class="table table-striped table-hover"
+                [class.table-warning]="darkTheme">
                 <thead>
                   <tr>
                     <th scope="col">Student ID</th>
@@ -52,13 +36,9 @@
                   <tr *ngFor="let student of students">
                     <td>{{ student.id }}</td>
                     <td>
-                      <img
-                        class="img-fluid rounded-circle"
-                        src="{{ student.avatar }}"
-                        onerror="this.src='assets/images/no-image.png';"
-                        alt="{{ student.name }}"
-                        style="background: #dcd5d5; width: 42px; height: 42px"
-                      />
+                      <img class="img-fluid rounded-circle" src="{{ student.avatar }}"
+                        onerror="this.src='assets/images/no-image.png';" alt="{{ student.name }}"
+                        style="background: #dcd5d5; width: 42px; height: 42px" />
                     </td>
                     <td>{{ student.firstName }}</td>
                     <td>{{ student.lastName }}</td>
@@ -67,30 +47,21 @@
 
                     <td class="d-flex">
                       &nbsp;
-                      <a
-                        [routerLink]="[
+                      <a [routerLink]="[
                           '/details',
                           student.id,
                           student.firstName
-                        ]"
-                        class="btn btn-outline-dark btn-sm"
-                      >
+                        ]" class="btn btn-outline-dark btn-sm">
                         <i class="fa fa-eye" aria-hidden="true"></i>
                       </a>
 
-                      <a
-                        routerLink="/edit/{{ student.id }}"
-                        class="btn btn-outline-success btn-sm"
-                        title="Edit Student"
-                      >
+                      <a routerLink="/edit/{{ student.id }}" class="btn btn-outline-success btn-sm"
+                        title="Edit Student">
                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                       </a>
                       &nbsp;
-                      <button
-                        class="btn btn-outline-danger btn-sm disabled"
-                        (click)="deleteStudent(student.id)"
-                        title="Delete Student"
-                      >
+                      <button class="btn btn-outline-danger btn-sm disabled" (click)="deleteStudent(student.id)"
+                        title="Delete Student">
                         <i class="fa fa-trash-o" aria-hidden="true"></i>
                       </button>
                     </td>

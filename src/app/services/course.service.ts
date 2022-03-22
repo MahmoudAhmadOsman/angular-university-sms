@@ -1,12 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CourseService {
-  // public coursesUrl = 'http://localhost:3000/courses';
-  public coursesUrl = 'https://custom-states-api.herokuapp.com/courses';
+  //Courses enviroment variable
+  private coursesUrl = environment.apiBaseUril + "/courses";
+  
   constructor(private http: HttpClient) {}
 
   //Courses api
