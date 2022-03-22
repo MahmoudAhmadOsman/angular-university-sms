@@ -8,13 +8,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-
 ## Code Snippet
 
- ##### Student List Class Component
+##### Student List Class Component
 
 ```bash
- import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import { StudentService } from '../../services/student.service';
@@ -50,7 +49,7 @@ export class ListStudentComponent implements OnInit {
     });
   }
 
-   
+
   deleteStudent(student_id: any) {
     alert('Are you sure you want to delete this student?');
     this.student.deleteStudent(student_id).subscribe(
@@ -75,10 +74,6 @@ export class ListStudentComponent implements OnInit {
 }
 ```
 
-
-
-
-
 ## Contributing
 
 Please, feel free to contrubute to this and correct me if you see anything wrong about this project or if you have any sugguestions that would also welcomed.
@@ -88,7 +83,6 @@ Please, feel free to contrubute to this and correct me if you see anything wrong
 Please, visit my website
 [mahmoudosman.com](http://www.mahmoudosman.com/)
 
-
 ### Social Media
 
-LinkedIn Profile Link: [LinkedIn](https://www.linkedin.com/in/mahmoudaoman/) 
+LinkedIn Profile Link: [LinkedIn](https://www.linkedin.com/in/mahmoudaoman/)
