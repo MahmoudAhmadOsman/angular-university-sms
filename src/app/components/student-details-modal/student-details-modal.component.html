@@ -17,26 +17,34 @@
               onerror="this.src='assets/images/no-image.png';"
             />
             <div class="card-body">
-              <p class="card-title">
+              <p class="card-title list-group-item disabled">
                 <b>Full Name:</b> {{ studentDetails.firstName }}
                 {{ studentDetails.lastName }}
               </p>
               <div class="card-text">
-                <p><b>School Name:</b> {{ studentDetails.schoolName }}</p>
-                <p><b>Email Address: </b>{{ studentDetails.email }}</p>
-                <p><b>Phone Number: </b> {{ studentDetails.phone }}</p>
-                <p>
+                <p class="list-group-item disabled">
+                  <b>School Name:</b> {{ studentDetails.schoolName }}
+                </p>
+                <p class="list-group-item disabled">
+                  <b>Email Address: </b>{{ studentDetails.email }}
+                </p>
+                <p class="list-group-item disabled">
+                  <b>Phone Number: </b> {{ studentDetails.phone }}
+                </p>
+                <p class="list-group-item disabled">
                   <b>Scholarhip(s): </b>
 
                   {{ studentDetails.scholarship | currency }}
                 </p>
-                <a routerLink="/students" class="btn btn-outline-dark btn-sm">
+                <br />
+                <br />
+                <a routerLink="/students" class="btn btn-outline-dark btn-lg">
                   <i class="fa fa-chevron-circle-left"></i>&nbsp;
                   <b>Back</b> </a
                 >&nbsp;&nbsp;
                 <a
                   routerLink="/edit/{{ studentDetails.id }}"
-                  class="btn btn-outline-dark btn-sm"
+                  class="btn btn-outline-dark btn-lg"
                 >
                   <i class="fa fa-pencil">&nbsp; <b>Edit</b></i>
                 </a>
