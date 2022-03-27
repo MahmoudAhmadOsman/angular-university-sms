@@ -10,9 +10,9 @@ import { Observable } from 'rxjs';
 export class StudentService {
   //Students enviroment variable
   // private apiServerUrl = environment.apiBaseUril + "/students";
-  public baseUrl ="https://custom-states-api.herokuapp.com/students";
+  public baseUrl = 'https://custom-states-api.herokuapp.com/students';
 
-  constructor(private http: HttpClient, private courseHttp: HttpClient) { }
+  constructor(private http: HttpClient, private courseHttp: HttpClient) {}
 
   //Get api endpoint
   getAllStudent() {
