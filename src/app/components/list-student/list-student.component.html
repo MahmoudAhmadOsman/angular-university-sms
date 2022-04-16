@@ -1,8 +1,10 @@
 <section class="student-list">
-  <div class="container">
+
+  <div class="container ">
     <div *ngIf="loading; else loaded">
       <app-loading></app-loading>
     </div>
+    <div class="page"> 
     <ng-template #loaded>
       <a
         routerLink="/add-student"
@@ -114,5 +116,6 @@
         </div>
       </div>
     </ng-template>
+  </div>
   </div>
 </section>

@@ -1,6 +1,37 @@
 .student-list {
   position: relative;
+  height: auto;
 }
 .student-list button:disabled {
   cursor: not-allowed !important;
+}
+
+.student-list .page {
+  height: 100vh;
+}
+.student-list .page::before {
+  content: "";
+  position: fixed;
+  width: 300%;
+  height: 100%;
+  background-color: #888edb;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) skew(0, -10deg);
+  border-radius: 50%;
+  z-index: -1;
+  animation: waving_bg 15s ease-in-out infinite alternate;
+  -webkit-animation: waving_bg 15s ease-in-out infinite alternate;
+  -ms-animation: waving_bg 15s ease-in-out infinite alternate;
+  -moz-animation: waving_bg 15s ease-in-out infinite alternate;
+  -o-animation: waving_bg 15s ease-in-out infinite alternate;
+}
+
+@keyframes waving_bg {
+  from {
+    transform: translateX(-50%) skew(0, -10deg);
+  }
+  to {
+    transform: translateX(-30%) skew(10deg, 0deg);
+  }
 }
