@@ -3,7 +3,7 @@ export interface Student {
   firstName: string;
   lastName: string;
   email: string;
-  phone: string;
+  phone: number;
   schoolName: string;
   scholarship: number;
   avatar: string;
