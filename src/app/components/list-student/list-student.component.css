@@ -7,7 +7,7 @@
 }
 
 .student-list .page {
-  height: 100vh;
+/*   height: 100vh; */
 }
 .student-list .page::before {
   content: "";
