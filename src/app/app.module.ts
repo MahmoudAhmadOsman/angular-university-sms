@@ -18,6 +18,7 @@ import { StudentDetailsModalComponent } from './components/student-details-modal
 import { NgToastModule } from 'ng-angular-popup';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { LoginComponent } from './components/login/login.component';
     StudentDetailsModalComponent,
     RegisterComponent,
     LoginComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

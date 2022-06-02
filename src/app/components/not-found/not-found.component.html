@@ -1,0 +1,9 @@
+<section class="not-found-message">
+  <div class="container mt-4" *ngIf="visible">
+    <div class="row">
+      <div class="col-lg-12 text-center alert alert-warning">
+        <a routerLink="{{ resetRoute }}">{{ notFoundMessage }}</a>
+      </div>
+    </div>
+  </div>
+</section>
