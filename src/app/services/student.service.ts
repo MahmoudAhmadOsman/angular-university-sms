@@ -14,27 +14,27 @@ export class StudentService {
 
   constructor(private http: HttpClient, private courseHttp: HttpClient) {}
 
-  //Get api endpoint
+  //Get all
   getAllStudent() {
     return this.http.get(this.baseUrl);
   }
 
-  //Save restAPI endpoint
+  //Save 
   saveStudentData(data: any) {
     return this.http.post(this.baseUrl, data);
   }
 
-  //Delete restAPI endpoint
+  //Delete 
   deleteStudent(id: number) {
     return this.http.delete(`${this.baseUrl}/${id}`);
   }
 
-  //Get by restAPI endpoint
+  //Get by id
   getStudentById(id: number) {
     return this.http.get(`${this.baseUrl}/${id}`);
   }
 
-  //Update restAPI endpoint
+  //Update 
   updateStudentData(id: number, data: any) {
     return this.http.put(`${this.baseUrl}/${id}`, data);
   }
