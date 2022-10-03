@@ -49,29 +49,6 @@ export class ListStudentComponent implements OnInit {
     });
   }
 
-
-  deleteStudent(student_id: any) {
-    alert('Are you sure you want to delete this student?');
-    this.student.deleteStudent(student_id).subscribe(
-      (data) => {
-        this.ngOnInit();
-        this.toast.warning({
-          detail: 'Deleted',
-          summary: 'Record has been deleted successfully!',
-          duration: 5000,
-        });
-        this.router.navigate(['/students']);
-      },
-      (error) => {
-        this.toast.error({
-          detail: 'Error',
-          summary: 'Unable to delete this record!!',
-          duration: 5000,
-        });
-      }
-    );
-  }
-}
 ```
 
 ## Contributing
