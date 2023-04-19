@@ -51,15 +51,11 @@ export class ListStudentComponent implements OnInit {
 
 ```
 
-## Contributing
-
-Please, feel free to contrubute to this and correct me if you see anything wrong about this project or if you have any sugguestions that would also welcomed.
 
 ### My Website
-
-Please, visit my website
+My website
 [mahmoudosman.com](http://www.mahmoudosman.com/)
 
-### Social Media
+### LinkedIn
 
 LinkedIn Profile Link: [LinkedIn](https://www.linkedin.com/in/mahmoudaoman/)
