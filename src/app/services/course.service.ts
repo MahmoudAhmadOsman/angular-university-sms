@@ -8,8 +8,8 @@ import { environment } from 'src/environments/environment';
 export class CourseService {
   //Courses enviroment variable
   // private coursesUrl = environment.apiBaseUril + "/courses";
-  public baseUrl ="https://custom-states-api.herokuapp.com/courses";
   
+  public baseUrl = 'https://stapes-api.onrender.com/courses';
   constructor(private http: HttpClient) {}
 
   //Courses api
