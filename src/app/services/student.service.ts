@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class StudentService {
   //Students enviroment variable
   // private apiServerUrl = environment.apiBaseUril + "/students";
-  public baseUrl = 'https://custom-states-api.herokuapp.com/students';
+  public baseUrl = 'https://stapes-api.onrender.com/students';
 
   constructor(private http: HttpClient, private courseHttp: HttpClient) {}
 
